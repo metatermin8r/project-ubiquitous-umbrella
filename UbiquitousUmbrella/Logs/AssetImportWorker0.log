@@ -15,7 +15,7 @@ C:/Users/Colton S Covert/Documents/GitHub/project-ubiquitous-umbrella/Ubiquitous
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-55692
+61666
 Successfully changed project path to: C:/Users/Colton S Covert/Documents/GitHub/project-ubiquitous-umbrella/UbiquitousUmbrella
 C:/Users/Colton S Covert/Documents/GitHub/project-ubiquitous-umbrella/UbiquitousUmbrella
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/Colton S Covert/Documents/GitHub/project-ubiquitous-umbrella/Ubiquitous
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [43288] Host "[IP] 192.168.144.239 [Port] 0 [Flags] 2 [Guid] 1480816485 [EditorId] 1480816485 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-TVROMHB) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [17468] Host "[IP] 192.168.144.239 [Port] 0 [Flags] 2 [Guid] 3920684778 [EditorId] 3920684778 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-TVROMHB) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [43288] Host "[IP] 192.168.144.239 [Port] 0 [Flags] 2 [Guid] 1480816485 [EditorId] 1480816485 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-TVROMHB) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [17468] Host "[IP] 192.168.144.239 [Port] 0 [Flags] 2 [Guid] 3920684778 [EditorId] 3920684778 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-TVROMHB) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 23 workers.
-Refreshing native plugins compatible for Editor in 16.64 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 17.18 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.11f1 (d00248457e15)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -70,44 +70,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56264
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56764
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.014510 seconds.
-- Loaded All Assemblies, in  0.359 seconds
+Registered in 0.015167 seconds.
+- Loaded All Assemblies, in  0.341 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.222 seconds
-Domain Reload Profiling: 578ms
-	BeginReloadAssembly (118ms)
+- Finished resetting the current domain, in  0.218 seconds
+Domain Reload Profiling: 554ms
+	BeginReloadAssembly (104ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (34ms)
+	RebuildCommonClasses (32ms)
 	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (68ms)
-	LoadAllAssembliesAndSetupDomain (125ms)
-		LoadAssemblies (112ms)
+	initialDomainReloadingComplete (69ms)
+	LoadAllAssembliesAndSetupDomain (121ms)
+		LoadAssemblies (100ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (123ms)
-			TypeCache.Refresh (122ms)
-				TypeCache.ScanAssembly (110ms)
+		AnalyzeDomain (119ms)
+			TypeCache.Refresh (117ms)
+				TypeCache.ScanAssembly (106ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (223ms)
+	FinalizeReload (218ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (172ms)
+		SetupLoadedEditorAssemblies (168ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
+			InitializePlatformSupportModulesInManaged (9ms)
 			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (110ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
+			ProcessInitializeOnLoadAttributes (108ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -115,8 +115,8 @@ Domain Reload Profiling: 578ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.884 seconds
-Refreshing native plugins compatible for Editor in 7.01 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.734 seconds
+Refreshing native plugins compatible for Editor in 8.80 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
@@ -126,89 +126,583 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.843 seconds
-Domain Reload Profiling: 1707ms
-	BeginReloadAssembly (149ms)
+- Finished resetting the current domain, in  0.722 seconds
+Domain Reload Profiling: 1447ms
+	BeginReloadAssembly (142ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (21ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (50ms)
-	LoadAllAssembliesAndSetupDomain (623ms)
-		LoadAssemblies (490ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (51ms)
+	LoadAllAssembliesAndSetupDomain (488ms)
+		LoadAssemblies (372ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (222ms)
-			TypeCache.Refresh (181ms)
-				TypeCache.ScanAssembly (161ms)
-			ScanForSourceGeneratedMonoScriptInfo (29ms)
+		AnalyzeDomain (200ms)
+			TypeCache.Refresh (164ms)
+				TypeCache.ScanAssembly (150ms)
+			ScanForSourceGeneratedMonoScriptInfo (24ms)
 			ResolveRequiredComponents (10ms)
-	FinalizeReload (844ms)
+	FinalizeReload (723ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (654ms)
+		SetupLoadedEditorAssemblies (572ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (5ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (111ms)
-			ProcessInitializeOnLoadAttributes (452ms)
-			ProcessInitializeOnLoadMethodAttributes (63ms)
-			AfterProcessingInitializeOnLoad (15ms)
+			BeforeProcessingInitializeOnLoad (95ms)
+			ProcessInitializeOnLoadAttributes (397ms)
+			ProcessInitializeOnLoadMethodAttributes (55ms)
+			AfterProcessingInitializeOnLoad (12ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.26 seconds
-Refreshing native plugins compatible for Editor in 23.20 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 7.95 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6387 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 122 unused Assets / (3.0 MB). Loaded Objects now: 6827.
-Memory consumption went from 264.5 MB to 261.5 MB.
-Total: 6.603500 ms (FindLiveObjects: 0.693800 ms CreateObjectMapping: 0.257900 ms MarkObjects: 4.588300 ms  DeleteObjects: 1.061400 ms)
+Unloading 6440 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 122 unused Assets / (3.0 MB). Loaded Objects now: 6881.
+Memory consumption went from 266.4 MB to 263.4 MB.
+Total: 4.748000 ms (FindLiveObjects: 0.630600 ms CreateObjectMapping: 0.176400 ms MarkObjects: 3.074700 ms  DeleteObjects: 0.865000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/SwayLayer.cs: 689498f96b974c2df55a72ca33b4488e -> d9c33d37df1d7fdaf85ab6057a8c2972
+  custom:scripting/monoscript/fileName/FPSAnimController.cs: 825fc13b2245ac3ad0c5379b0d783107 -> 2eaf66ef858bc716ed3e5de99fef04ba
+  custom:scripting/monoscript/fileName/LeftHandIKLayer.cs: 97a8642320d120ac1706d45fb42b53bd -> 110b0f6a4bf91ec50c877983b5fc683e
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 14caa75140ce5931f293cd77da047932 -> 9c4f283887062e0a574da577b735df46
+  custom:scripting/monoscript/fileName/FPSAnimatorEditorWindow.cs: 79551464eab6502ae8538600f3b78a05 -> 48723a6248950e8d2f58e693c6bad833
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/IKAnimation.cs: 2d8d8c7666b6d64e4929ea26dba2eda6 -> f2e00d40f9e831de742e81a97eec5680
+  custom:scripting/monoscript/fileName/FPSAnimValidatorEditorWindow.cs: f76ad29f27adae75eebaa4fb10f28d34 -> a5bda332db60e809ba4d2240f8735631
+  custom:scripting/monoscript/fileName/ModifyCurve.cs: 4a4ee8ef49e3ca44227b7837cd5b5fc5 -> 67b5ed8d13215373227aa6ab40942489
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/LookLayerEditor.cs: 7d6ebdcfcdc9e901cf9860e67c9899ee -> f2af23d4791849ee6b381d2ab627a526
+  custom:scripting/monoscript/fileName/BlendAsset.cs: 764d781fdba0218cd40fef8ff1f0fc44 -> 815aa1f529b36d1be49e6e59a45e1ef6
+  custom:scripting/monoscript/fileName/FPSAnimatorUtilityEditorWindow.cs: 6ab1f2e983a46d30073d56304208a9ab -> 241898f8b5ab77f0f786d7bcfdc2393d
+  custom:scripting/monoscript/fileName/LocomotionLayer.cs: 4e675511fd9f1ca4aadf07320a7dd845 -> a3bf4ca7709b249da31edeb5f4dacf8d
+  custom:scripting/monoscript/fileName/TabAttribute.cs: f882e21dd2434018c29829a738216e3d -> 663fbe6a89b8de9eac9bf481f4160d00
+  custom:CustomObjectIndexerAttribute: d54d2f2da18e7612c182cf67624b6b12 -> 
+  custom:scripting/monoscript/fileName/AnimLayer.cs: a537f6ab9c419859cd938731a1fc7006 -> b3ded824b5d08755940f5a7018ebe61e
+  custom:scripting/monoscript/fileName/RecoilAnimation.cs: 7eaf589d95e386923a964f6a61215c03 -> 59013c2aea5a580ad739c8a0349c96ce
+  custom:scripting/monoscript/fileName/FPSCamera.cs: 9b11f0ebf7fd7d093a7ef41fe92f5e50 -> 762d9203fda42f753faa38ba9b49611b
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/BoneSelectionPopup.cs: 39e1402c4e362020caf87c4b811c2274 -> 70715ec14bb2f60441601b2f9c86351a
+  custom:scripting/monoscript/fileName/RecoilAnimData.cs: b0a3cc84a190fb793fb8b40e6cc262da -> e41be5e810aec9929229fda91bdb915a
+  custom:scripting/monoscript/fileName/LegIK.cs: c9aa92c1754246bc1425bd4123716498 -> 4421859ee0e7559f6fa2414c3e976bac
+  custom:scripting/monoscript/fileName/AnimSequence.cs: 0dfed26ecc3d445556d06af7924c3735 -> e6d7e5fb53b10ca1de93e3def0ef18eb
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: fdbace2b099aa9ae78b3bd1cc155b295 -> f89c7f2bbd1b25d8a3f5c667a955128c
+  custom:scripting/monoscript/fileName/FPSAnimLib.cs: 00adddf130a851b072d0ca4c7d1a8d2c -> 847447c476826b4789e8698bac32abdf
+  custom:scripting/monoscript/fileName/CoreAnimGraph.cs: 5b6299d153a22bd1203183847787caed -> 4be222347ae26f0000890cd7459869aa
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/RecoilLayer.cs: 121461303b440e6a84b804ce856eb1e2 -> e35b95ce26b23e4d940b6bb8d4eb5f16
+  custom:scripting/monoscript/fileName/CopyBoneModifier.cs: 99ca21ad41528cde63b41f2f860362cf -> 508c2d99942e2f4d8399b2ed296a82d0
+  custom:scripting/monoscript/fileName/FPSAnimWeapon.cs: 9500912ea7b2c26a1fb403335d7fd4e4 -> d5f840f9b4fde3807af32ae3430e6793
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/IKinemationTool.cs: 3848806d514750bb974170ffa3926d4c -> cb6d44c9d7b50aaea4de586f958fcef2
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/FPSAnimWeaponEditor.cs: fcb351b0e03cc0364d15367f43e5063e -> b6018aa150917c7ce2c422fa5af0fd77
+  custom:scripting/monoscript/fileName/CoreAnimMixer.cs: 488ac31c6021af2968d687797f90cddc -> fec47d280c1900ab20c20dfdac626278
+  custom:scripting/monoscript/fileName/PoseBlending.cs: a463e403b428a0e07488a6265689789b -> 100f9bffad715639f44ea8b95ad78619
+  custom:scripting/monoscript/fileName/AimOffsetTable.cs: d85108dfa6e63751d61ea3378172d4d3 -> 6428cb7d1cc43047c1305a0235c011c2
+  custom:scripting/monoscript/fileName/LookAtLayer.cs: aff0d6a98e07c881c4e1de2dc30f99f8 -> 16fe5e0221e82b3af23976a4876c1a1b
+  custom:scripting/monoscript/fileName/AvatarMaskModifier.cs: d105556a10266457444151221890da79 -> b1cb856db5d05bdf860e25e5cfd7715a
+  custom:scripting/monoscript/fileName/AdsLayer.cs: 117bb97328a274bd01d11bc1010f3e76 -> 05675cff3eb1046219f291638341995d
+  custom:scripting/monoscript/fileName/CurveLib.cs: 33e0bc0296d2059e8dfe7481e1f24863 -> 50298465aaff0d6eba4edabc0bc443aa
+  custom:scripting/monoscript/fileName/WeaponAnimAsset.cs: 39daf10339f53bab939fe6e3c2a4663b -> e7df41ffb4c952c201f3443ac9ccea10
+  custom:scripting/monoscript/fileName/CurveEditorUtility.cs: 6a2ea40d466961a2b561c0d1d7f11b9b -> f1c2e5a418567211f99ba32467a9a30d
+  custom:scripting/monoscript/fileName/CoreToolkitLib.cs: 92dc845f7572a7ac3b175937bc2082b1 -> f3f314b60186e6487cde432bebfe9d5a
+  custom:scripting/monoscript/fileName/WeaponTypes.cs: f8c7ad2d5ac500b2932bb1e088883e45 -> 3ec45cf3336453316afa80e34d7f7478
+  custom:scripting/monoscript/fileName/CustomAttributes.cs: 5032f9e5918f90e0d17a7deec3066d85 -> df3530c0de9281da00776f09f7e23f50
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/WeaponCollision.cs: 12f0ae2eacce5dfda97773cd4e2bb6b7 -> 0d352cd31d6c8898fc558ca9055bb3f9
+  custom:scripting/monoscript/fileName/FPSCameraShake.cs: efea54439df2bdcb2cd4de34fc413163 -> 5e4fd28e71418774316dda2595597a0a
+  custom:scripting/monoscript/fileName/IKAdditiveGenerator.cs: 88d95d780149b12a54b38ccb2d30c8b1 -> 9241210e7b23ba93f542e1e5eea87e76
+  custom:scripting/monoscript/fileName/SlotLayer.cs: f7af4767f3683c43568628283a7f6913 -> f59180d4f0b7f95a1f1f8e1dbd9c8dc2
+  custom:scripting/monoscript/fileName/RootBoneRotator.cs: e1e94a4df12f7d3c0d7e8bdf4ac89606 -> d235dd704a0567230933f9b42587526c
+  custom:scripting/monoscript/fileName/LookLayer.cs: 29dbc968266055c3b1c2709954b9ca3f -> 125c6c46ef85fc4257f6ce040f0858e9
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/BlendAssetEditor.cs: 399ce438d159089dd441ca661c79e57e -> cdc16309bce2eafa9053ac7251789a0f
+  custom:scripting/monoscript/fileName/CameraData.cs: 5afed7ac1fa000c20810f60066837729 -> 224b7cf525fbd59f376d8b1333488138
+  custom:scripting/monoscript/fileName/BoneContainer.cs: c4fab1abb27828f5e2e0452be85c06d9 -> 3d2bfaaa18586bb98baa69eac3145f0b
+  custom:scripting/monoscript/fileName/CoreOverlayController.cs: 691c9ba420b12dd1cb9e87efa9c9b89e -> b7198ab3b715079f731a2f792a6214f0
 ========================================================================
 Received Import Request.
-  Time since last request: 573117.235055 seconds.
-  path: Assets/UniversalRenderPipelineGlobalSettings.asset
-  artifactKey: Guid(18dc0cd2c080841dea60987a38ce93fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UniversalRenderPipelineGlobalSettings.asset using Guid(18dc0cd2c080841dea60987a38ce93fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0826c28cb0ac08c7995a8211ea1eb1f9') in 0.018192 seconds
+  Time since last request: 642015.969242 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7af3525505ed5cfcfcee66ab495fe9f4') in 0.009862 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 43.495816 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42edb4e15693a1774ac458e70d84070d') in 0.000923 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 140.572359 seconds.
+  path: Assets/Player.prefab
+  artifactKey: Guid(f5729864e4b31bb4c9ae7355db7315f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player.prefab using Guid(f5729864e4b31bb4c9ae7355db7315f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '714874ee1169bd5de50e577702e9e5e4') in 0.255174 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 16.82 ms, found 4 plugins.
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.517 seconds
+Refreshing native plugins compatible for Editor in 7.32 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-UbiquitousUmbrella
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.724 seconds
+Domain Reload Profiling: 3232ms
+	BeginReloadAssembly (165ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (268ms)
+		LoadAssemblies (328ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (2724ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (563ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (98ms)
+			ProcessInitializeOnLoadAttributes (379ms)
+			ProcessInitializeOnLoadMethodAttributes (63ms)
+			AfterProcessingInitializeOnLoad (13ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Refreshing native plugins compatible for Editor in 7.51 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 30 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (2.9 MB). Loaded Objects now: 6828.
-Memory consumption went from 123.1 MB to 120.1 MB.
-Total: 5.226900 ms (FindLiveObjects: 0.592000 ms CreateObjectMapping: 0.177700 ms MarkObjects: 3.735600 ms  DeleteObjects: 0.720200 ms)
+Unloading 6201 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (3.0 MB). Loaded Objects now: 6945.
+Memory consumption went from 226.7 MB to 223.7 MB.
+Total: 5.197100 ms (FindLiveObjects: 0.713100 ms CreateObjectMapping: 0.532100 ms MarkObjects: 3.222000 ms  DeleteObjects: 0.728800 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/SwayLayer.cs: 689498f96b974c2df55a72ca33b4488e -> d9c33d37df1d7fdaf85ab6057a8c2972
+  custom:scripting/monoscript/fileName/FPSAnimController.cs: 825fc13b2245ac3ad0c5379b0d783107 -> 2eaf66ef858bc716ed3e5de99fef04ba
+  custom:scripting/monoscript/fileName/LeftHandIKLayer.cs: 97a8642320d120ac1706d45fb42b53bd -> 110b0f6a4bf91ec50c877983b5fc683e
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 14caa75140ce5931f293cd77da047932 -> 9c4f283887062e0a574da577b735df46
+  custom:scripting/monoscript/fileName/FPSAnimatorEditorWindow.cs: 79551464eab6502ae8538600f3b78a05 -> 48723a6248950e8d2f58e693c6bad833
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/IKAnimation.cs: 2d8d8c7666b6d64e4929ea26dba2eda6 -> f2e00d40f9e831de742e81a97eec5680
+  custom:scripting/monoscript/fileName/FPSAnimValidatorEditorWindow.cs: f76ad29f27adae75eebaa4fb10f28d34 -> a5bda332db60e809ba4d2240f8735631
+  custom:scripting/monoscript/fileName/ModifyCurve.cs: 4a4ee8ef49e3ca44227b7837cd5b5fc5 -> 67b5ed8d13215373227aa6ab40942489
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/LookLayerEditor.cs: 7d6ebdcfcdc9e901cf9860e67c9899ee -> f2af23d4791849ee6b381d2ab627a526
+  custom:scripting/monoscript/fileName/BlendAsset.cs: 764d781fdba0218cd40fef8ff1f0fc44 -> 815aa1f529b36d1be49e6e59a45e1ef6
+  custom:scripting/monoscript/fileName/FPSAnimatorUtilityEditorWindow.cs: 6ab1f2e983a46d30073d56304208a9ab -> 241898f8b5ab77f0f786d7bcfdc2393d
+  custom:scripting/monoscript/fileName/LocomotionLayer.cs: 4e675511fd9f1ca4aadf07320a7dd845 -> a3bf4ca7709b249da31edeb5f4dacf8d
+  custom:scripting/monoscript/fileName/TabAttribute.cs: f882e21dd2434018c29829a738216e3d -> 663fbe6a89b8de9eac9bf481f4160d00
   custom:CustomObjectIndexerAttribute: d54d2f2da18e7612c182cf67624b6b12 -> 
+  custom:scripting/monoscript/fileName/AnimLayer.cs: a537f6ab9c419859cd938731a1fc7006 -> b3ded824b5d08755940f5a7018ebe61e
+  custom:scripting/monoscript/fileName/RecoilAnimation.cs: 7eaf589d95e386923a964f6a61215c03 -> 59013c2aea5a580ad739c8a0349c96ce
+  custom:scripting/monoscript/fileName/FPSCamera.cs: 9b11f0ebf7fd7d093a7ef41fe92f5e50 -> 762d9203fda42f753faa38ba9b49611b
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/BoneSelectionPopup.cs: 39e1402c4e362020caf87c4b811c2274 -> 70715ec14bb2f60441601b2f9c86351a
+  custom:scripting/monoscript/fileName/RecoilAnimData.cs: b0a3cc84a190fb793fb8b40e6cc262da -> e41be5e810aec9929229fda91bdb915a
+  custom:scripting/monoscript/fileName/LegIK.cs: c9aa92c1754246bc1425bd4123716498 -> 4421859ee0e7559f6fa2414c3e976bac
+  custom:scripting/monoscript/fileName/AnimSequence.cs: 0dfed26ecc3d445556d06af7924c3735 -> e6d7e5fb53b10ca1de93e3def0ef18eb
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: fdbace2b099aa9ae78b3bd1cc155b295 -> f89c7f2bbd1b25d8a3f5c667a955128c
+  custom:scripting/monoscript/fileName/FPSAnimLib.cs: 00adddf130a851b072d0ca4c7d1a8d2c -> 847447c476826b4789e8698bac32abdf
+  custom:scripting/monoscript/fileName/CoreAnimGraph.cs: 5b6299d153a22bd1203183847787caed -> 4be222347ae26f0000890cd7459869aa
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/RecoilLayer.cs: 121461303b440e6a84b804ce856eb1e2 -> e35b95ce26b23e4d940b6bb8d4eb5f16
+  custom:scripting/monoscript/fileName/CopyBoneModifier.cs: 99ca21ad41528cde63b41f2f860362cf -> 508c2d99942e2f4d8399b2ed296a82d0
+  custom:scripting/monoscript/fileName/FPSAnimWeapon.cs: 9500912ea7b2c26a1fb403335d7fd4e4 -> d5f840f9b4fde3807af32ae3430e6793
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/IKinemationTool.cs: 3848806d514750bb974170ffa3926d4c -> cb6d44c9d7b50aaea4de586f958fcef2
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/FPSAnimWeaponEditor.cs: fcb351b0e03cc0364d15367f43e5063e -> b6018aa150917c7ce2c422fa5af0fd77
+  custom:scripting/monoscript/fileName/CoreAnimMixer.cs: 488ac31c6021af2968d687797f90cddc -> fec47d280c1900ab20c20dfdac626278
+  custom:scripting/monoscript/fileName/PoseBlending.cs: a463e403b428a0e07488a6265689789b -> 100f9bffad715639f44ea8b95ad78619
+  custom:scripting/monoscript/fileName/AimOffsetTable.cs: d85108dfa6e63751d61ea3378172d4d3 -> 6428cb7d1cc43047c1305a0235c011c2
+  custom:scripting/monoscript/fileName/LookAtLayer.cs: aff0d6a98e07c881c4e1de2dc30f99f8 -> 16fe5e0221e82b3af23976a4876c1a1b
+  custom:scripting/monoscript/fileName/AvatarMaskModifier.cs: d105556a10266457444151221890da79 -> b1cb856db5d05bdf860e25e5cfd7715a
+  custom:scripting/monoscript/fileName/AdsLayer.cs: 117bb97328a274bd01d11bc1010f3e76 -> 05675cff3eb1046219f291638341995d
+  custom:scripting/monoscript/fileName/CurveLib.cs: 33e0bc0296d2059e8dfe7481e1f24863 -> 50298465aaff0d6eba4edabc0bc443aa
+  custom:scripting/monoscript/fileName/WeaponAnimAsset.cs: 39daf10339f53bab939fe6e3c2a4663b -> e7df41ffb4c952c201f3443ac9ccea10
+  custom:scripting/monoscript/fileName/CurveEditorUtility.cs: 6a2ea40d466961a2b561c0d1d7f11b9b -> f1c2e5a418567211f99ba32467a9a30d
+  custom:scripting/monoscript/fileName/CoreToolkitLib.cs: 92dc845f7572a7ac3b175937bc2082b1 -> f3f314b60186e6487cde432bebfe9d5a
+  custom:scripting/monoscript/fileName/WeaponTypes.cs: f8c7ad2d5ac500b2932bb1e088883e45 -> 3ec45cf3336453316afa80e34d7f7478
+  custom:scripting/monoscript/fileName/CustomAttributes.cs: 5032f9e5918f90e0d17a7deec3066d85 -> df3530c0de9281da00776f09f7e23f50
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/WeaponCollision.cs: 12f0ae2eacce5dfda97773cd4e2bb6b7 -> 0d352cd31d6c8898fc558ca9055bb3f9
+  custom:scripting/monoscript/fileName/FPSCameraShake.cs: efea54439df2bdcb2cd4de34fc413163 -> 5e4fd28e71418774316dda2595597a0a
+  custom:scripting/monoscript/fileName/IKAdditiveGenerator.cs: 88d95d780149b12a54b38ccb2d30c8b1 -> 9241210e7b23ba93f542e1e5eea87e76
+  custom:scripting/monoscript/fileName/SlotLayer.cs: f7af4767f3683c43568628283a7f6913 -> f59180d4f0b7f95a1f1f8e1dbd9c8dc2
+  custom:scripting/monoscript/fileName/RootBoneRotator.cs: e1e94a4df12f7d3c0d7e8bdf4ac89606 -> d235dd704a0567230933f9b42587526c
+  custom:scripting/monoscript/fileName/LookLayer.cs: 29dbc968266055c3b1c2709954b9ca3f -> 125c6c46ef85fc4257f6ce040f0858e9
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/BlendAssetEditor.cs: 399ce438d159089dd441ca661c79e57e -> cdc16309bce2eafa9053ac7251789a0f
+  custom:scripting/monoscript/fileName/CameraData.cs: 5afed7ac1fa000c20810f60066837729 -> 224b7cf525fbd59f376d8b1333488138
+  custom:scripting/monoscript/fileName/BoneContainer.cs: c4fab1abb27828f5e2e0452be85c06d9 -> 3d2bfaaa18586bb98baa69eac3145f0b
+  custom:scripting/monoscript/fileName/CoreOverlayController.cs: 691c9ba420b12dd1cb9e87efa9c9b89e -> b7198ab3b715079f731a2f792a6214f0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.488 seconds
+Refreshing native plugins compatible for Editor in 6.69 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-UbiquitousUmbrella
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.627 seconds
+Domain Reload Profiling: 2106ms
+	BeginReloadAssembly (158ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (247ms)
+		LoadAssemblies (307ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1627ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (576ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (100ms)
+			ProcessInitializeOnLoadAttributes (390ms)
+			ProcessInitializeOnLoadMethodAttributes (61ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (20ms)
+Refreshing native plugins compatible for Editor in 6.46 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6201 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (3.0 MB). Loaded Objects now: 6962.
+Memory consumption went from 228.6 MB to 225.6 MB.
+Total: 4.926400 ms (FindLiveObjects: 0.747800 ms CreateObjectMapping: 0.446400 ms MarkObjects: 3.035700 ms  DeleteObjects: 0.696000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/SwayLayer.cs: 689498f96b974c2df55a72ca33b4488e -> d9c33d37df1d7fdaf85ab6057a8c2972
+  custom:scripting/monoscript/fileName/FPSAnimController.cs: 825fc13b2245ac3ad0c5379b0d783107 -> 2eaf66ef858bc716ed3e5de99fef04ba
+  custom:scripting/monoscript/fileName/LeftHandIKLayer.cs: 97a8642320d120ac1706d45fb42b53bd -> 110b0f6a4bf91ec50c877983b5fc683e
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 14caa75140ce5931f293cd77da047932 -> 9c4f283887062e0a574da577b735df46
+  custom:scripting/monoscript/fileName/FPSAnimatorEditorWindow.cs: 79551464eab6502ae8538600f3b78a05 -> 48723a6248950e8d2f58e693c6bad833
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/IKAnimation.cs: 2d8d8c7666b6d64e4929ea26dba2eda6 -> f2e00d40f9e831de742e81a97eec5680
+  custom:scripting/monoscript/fileName/FPSAnimValidatorEditorWindow.cs: f76ad29f27adae75eebaa4fb10f28d34 -> a5bda332db60e809ba4d2240f8735631
+  custom:scripting/monoscript/fileName/ModifyCurve.cs: 4a4ee8ef49e3ca44227b7837cd5b5fc5 -> 67b5ed8d13215373227aa6ab40942489
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/LookLayerEditor.cs: 7d6ebdcfcdc9e901cf9860e67c9899ee -> f2af23d4791849ee6b381d2ab627a526
+  custom:scripting/monoscript/fileName/BlendAsset.cs: 764d781fdba0218cd40fef8ff1f0fc44 -> 815aa1f529b36d1be49e6e59a45e1ef6
+  custom:scripting/monoscript/fileName/FPSAnimatorUtilityEditorWindow.cs: 6ab1f2e983a46d30073d56304208a9ab -> 241898f8b5ab77f0f786d7bcfdc2393d
+  custom:scripting/monoscript/fileName/LocomotionLayer.cs: 4e675511fd9f1ca4aadf07320a7dd845 -> a3bf4ca7709b249da31edeb5f4dacf8d
+  custom:scripting/monoscript/fileName/TabAttribute.cs: f882e21dd2434018c29829a738216e3d -> 663fbe6a89b8de9eac9bf481f4160d00
+  custom:CustomObjectIndexerAttribute: d54d2f2da18e7612c182cf67624b6b12 -> 
+  custom:scripting/monoscript/fileName/AnimLayer.cs: a537f6ab9c419859cd938731a1fc7006 -> b3ded824b5d08755940f5a7018ebe61e
+  custom:scripting/monoscript/fileName/RecoilAnimation.cs: 7eaf589d95e386923a964f6a61215c03 -> 59013c2aea5a580ad739c8a0349c96ce
+  custom:scripting/monoscript/fileName/FPSCamera.cs: 9b11f0ebf7fd7d093a7ef41fe92f5e50 -> 762d9203fda42f753faa38ba9b49611b
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/BoneSelectionPopup.cs: 39e1402c4e362020caf87c4b811c2274 -> 70715ec14bb2f60441601b2f9c86351a
+  custom:scripting/monoscript/fileName/RecoilAnimData.cs: b0a3cc84a190fb793fb8b40e6cc262da -> e41be5e810aec9929229fda91bdb915a
+  custom:scripting/monoscript/fileName/LegIK.cs: c9aa92c1754246bc1425bd4123716498 -> 4421859ee0e7559f6fa2414c3e976bac
+  custom:scripting/monoscript/fileName/AnimSequence.cs: 0dfed26ecc3d445556d06af7924c3735 -> e6d7e5fb53b10ca1de93e3def0ef18eb
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: fdbace2b099aa9ae78b3bd1cc155b295 -> f89c7f2bbd1b25d8a3f5c667a955128c
+  custom:scripting/monoscript/fileName/FPSAnimLib.cs: 00adddf130a851b072d0ca4c7d1a8d2c -> 847447c476826b4789e8698bac32abdf
+  custom:scripting/monoscript/fileName/CoreAnimGraph.cs: 5b6299d153a22bd1203183847787caed -> 4be222347ae26f0000890cd7459869aa
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/RecoilLayer.cs: 121461303b440e6a84b804ce856eb1e2 -> e35b95ce26b23e4d940b6bb8d4eb5f16
+  custom:scripting/monoscript/fileName/CopyBoneModifier.cs: 99ca21ad41528cde63b41f2f860362cf -> 508c2d99942e2f4d8399b2ed296a82d0
+  custom:scripting/monoscript/fileName/FPSAnimWeapon.cs: 9500912ea7b2c26a1fb403335d7fd4e4 -> d5f840f9b4fde3807af32ae3430e6793
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/IKinemationTool.cs: 3848806d514750bb974170ffa3926d4c -> cb6d44c9d7b50aaea4de586f958fcef2
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/FPSAnimWeaponEditor.cs: fcb351b0e03cc0364d15367f43e5063e -> b6018aa150917c7ce2c422fa5af0fd77
+  custom:scripting/monoscript/fileName/CoreAnimMixer.cs: 488ac31c6021af2968d687797f90cddc -> fec47d280c1900ab20c20dfdac626278
+  custom:scripting/monoscript/fileName/PoseBlending.cs: a463e403b428a0e07488a6265689789b -> 100f9bffad715639f44ea8b95ad78619
+  custom:scripting/monoscript/fileName/AimOffsetTable.cs: d85108dfa6e63751d61ea3378172d4d3 -> 6428cb7d1cc43047c1305a0235c011c2
+  custom:scripting/monoscript/fileName/LookAtLayer.cs: aff0d6a98e07c881c4e1de2dc30f99f8 -> 16fe5e0221e82b3af23976a4876c1a1b
+  custom:scripting/monoscript/fileName/AvatarMaskModifier.cs: d105556a10266457444151221890da79 -> b1cb856db5d05bdf860e25e5cfd7715a
+  custom:scripting/monoscript/fileName/AdsLayer.cs: 117bb97328a274bd01d11bc1010f3e76 -> 05675cff3eb1046219f291638341995d
+  custom:scripting/monoscript/fileName/CurveLib.cs: 33e0bc0296d2059e8dfe7481e1f24863 -> 50298465aaff0d6eba4edabc0bc443aa
+  custom:scripting/monoscript/fileName/WeaponAnimAsset.cs: 39daf10339f53bab939fe6e3c2a4663b -> e7df41ffb4c952c201f3443ac9ccea10
+  custom:scripting/monoscript/fileName/CurveEditorUtility.cs: 6a2ea40d466961a2b561c0d1d7f11b9b -> f1c2e5a418567211f99ba32467a9a30d
+  custom:scripting/monoscript/fileName/CoreToolkitLib.cs: 92dc845f7572a7ac3b175937bc2082b1 -> f3f314b60186e6487cde432bebfe9d5a
+  custom:scripting/monoscript/fileName/WeaponTypes.cs: f8c7ad2d5ac500b2932bb1e088883e45 -> 3ec45cf3336453316afa80e34d7f7478
+  custom:scripting/monoscript/fileName/CustomAttributes.cs: 5032f9e5918f90e0d17a7deec3066d85 -> df3530c0de9281da00776f09f7e23f50
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/WeaponCollision.cs: 12f0ae2eacce5dfda97773cd4e2bb6b7 -> 0d352cd31d6c8898fc558ca9055bb3f9
+  custom:scripting/monoscript/fileName/FPSCameraShake.cs: efea54439df2bdcb2cd4de34fc413163 -> 5e4fd28e71418774316dda2595597a0a
+  custom:scripting/monoscript/fileName/IKAdditiveGenerator.cs: 88d95d780149b12a54b38ccb2d30c8b1 -> 9241210e7b23ba93f542e1e5eea87e76
+  custom:scripting/monoscript/fileName/SlotLayer.cs: f7af4767f3683c43568628283a7f6913 -> f59180d4f0b7f95a1f1f8e1dbd9c8dc2
+  custom:scripting/monoscript/fileName/RootBoneRotator.cs: e1e94a4df12f7d3c0d7e8bdf4ac89606 -> d235dd704a0567230933f9b42587526c
+  custom:scripting/monoscript/fileName/LookLayer.cs: 29dbc968266055c3b1c2709954b9ca3f -> 125c6c46ef85fc4257f6ce040f0858e9
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/BlendAssetEditor.cs: 399ce438d159089dd441ca661c79e57e -> cdc16309bce2eafa9053ac7251789a0f
+  custom:scripting/monoscript/fileName/CameraData.cs: 5afed7ac1fa000c20810f60066837729 -> 224b7cf525fbd59f376d8b1333488138
+  custom:scripting/monoscript/fileName/BoneContainer.cs: c4fab1abb27828f5e2e0452be85c06d9 -> 3d2bfaaa18586bb98baa69eac3145f0b
+  custom:scripting/monoscript/fileName/CoreOverlayController.cs: 691c9ba420b12dd1cb9e87efa9c9b89e -> b7198ab3b715079f731a2f792a6214f0
+========================================================================
+Received Import Request.
+  Time since last request: 108.331716 seconds.
+  path: Assets/Player.prefab
+  artifactKey: Guid(f5729864e4b31bb4c9ae7355db7315f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player.prefab using Guid(f5729864e4b31bb4c9ae7355db7315f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ab1e2840b25274819972d7fa49218f6') in 0.204259 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 39
+========================================================================
+Received Import Request.
+  Time since last request: 2.335801 seconds.
+  path: Assets/Player.prefab
+  artifactKey: Guid(f5729864e4b31bb4c9ae7355db7315f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player.prefab using Guid(f5729864e4b31bb4c9ae7355db7315f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72ab4db675a360ebd13e189a46504baa') in 0.013644 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.519 seconds
+Refreshing native plugins compatible for Editor in 7.94 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-UbiquitousUmbrella
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.623 seconds
+Domain Reload Profiling: 2132ms
+	BeginReloadAssembly (166ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (265ms)
+		LoadAssemblies (325ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1623ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (559ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (95ms)
+			ProcessInitializeOnLoadAttributes (385ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
+			AfterProcessingInitializeOnLoad (12ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (20ms)
+Refreshing native plugins compatible for Editor in 6.04 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6201 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (3.0 MB). Loaded Objects now: 7015.
+Memory consumption went from 230.7 MB to 227.7 MB.
+Total: 5.138300 ms (FindLiveObjects: 0.578700 ms CreateObjectMapping: 0.495800 ms MarkObjects: 3.340400 ms  DeleteObjects: 0.722600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/SwayLayer.cs: 689498f96b974c2df55a72ca33b4488e -> d9c33d37df1d7fdaf85ab6057a8c2972
+  custom:scripting/monoscript/fileName/FPSAnimController.cs: 825fc13b2245ac3ad0c5379b0d783107 -> 2eaf66ef858bc716ed3e5de99fef04ba
+  custom:scripting/monoscript/fileName/LeftHandIKLayer.cs: 97a8642320d120ac1706d45fb42b53bd -> 110b0f6a4bf91ec50c877983b5fc683e
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 14caa75140ce5931f293cd77da047932 -> 9c4f283887062e0a574da577b735df46
+  custom:scripting/monoscript/fileName/FPSAnimatorEditorWindow.cs: 79551464eab6502ae8538600f3b78a05 -> 48723a6248950e8d2f58e693c6bad833
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/IKAnimation.cs: 2d8d8c7666b6d64e4929ea26dba2eda6 -> f2e00d40f9e831de742e81a97eec5680
+  custom:scripting/monoscript/fileName/FPSAnimValidatorEditorWindow.cs: f76ad29f27adae75eebaa4fb10f28d34 -> a5bda332db60e809ba4d2240f8735631
+  custom:scripting/monoscript/fileName/ModifyCurve.cs: 4a4ee8ef49e3ca44227b7837cd5b5fc5 -> 67b5ed8d13215373227aa6ab40942489
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/LookLayerEditor.cs: 7d6ebdcfcdc9e901cf9860e67c9899ee -> f2af23d4791849ee6b381d2ab627a526
+  custom:scripting/monoscript/fileName/BlendAsset.cs: 764d781fdba0218cd40fef8ff1f0fc44 -> 815aa1f529b36d1be49e6e59a45e1ef6
+  custom:scripting/monoscript/fileName/FPSAnimatorUtilityEditorWindow.cs: 6ab1f2e983a46d30073d56304208a9ab -> 241898f8b5ab77f0f786d7bcfdc2393d
+  custom:scripting/monoscript/fileName/LocomotionLayer.cs: 4e675511fd9f1ca4aadf07320a7dd845 -> a3bf4ca7709b249da31edeb5f4dacf8d
+  custom:scripting/monoscript/fileName/TabAttribute.cs: f882e21dd2434018c29829a738216e3d -> 663fbe6a89b8de9eac9bf481f4160d00
+  custom:CustomObjectIndexerAttribute: d54d2f2da18e7612c182cf67624b6b12 -> 
+  custom:scripting/monoscript/fileName/AnimLayer.cs: a537f6ab9c419859cd938731a1fc7006 -> b3ded824b5d08755940f5a7018ebe61e
+  custom:scripting/monoscript/fileName/RecoilAnimation.cs: 7eaf589d95e386923a964f6a61215c03 -> 59013c2aea5a580ad739c8a0349c96ce
+  custom:scripting/monoscript/fileName/FPSCamera.cs: 9b11f0ebf7fd7d093a7ef41fe92f5e50 -> 762d9203fda42f753faa38ba9b49611b
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/BoneSelectionPopup.cs: 39e1402c4e362020caf87c4b811c2274 -> 70715ec14bb2f60441601b2f9c86351a
+  custom:scripting/monoscript/fileName/RecoilAnimData.cs: b0a3cc84a190fb793fb8b40e6cc262da -> e41be5e810aec9929229fda91bdb915a
+  custom:scripting/monoscript/fileName/LegIK.cs: c9aa92c1754246bc1425bd4123716498 -> 4421859ee0e7559f6fa2414c3e976bac
+  custom:scripting/monoscript/fileName/AnimSequence.cs: 0dfed26ecc3d445556d06af7924c3735 -> e6d7e5fb53b10ca1de93e3def0ef18eb
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: fdbace2b099aa9ae78b3bd1cc155b295 -> f89c7f2bbd1b25d8a3f5c667a955128c
+  custom:scripting/monoscript/fileName/FPSAnimLib.cs: 00adddf130a851b072d0ca4c7d1a8d2c -> 847447c476826b4789e8698bac32abdf
+  custom:scripting/monoscript/fileName/CoreAnimGraph.cs: 5b6299d153a22bd1203183847787caed -> 4be222347ae26f0000890cd7459869aa
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/RecoilLayer.cs: 121461303b440e6a84b804ce856eb1e2 -> e35b95ce26b23e4d940b6bb8d4eb5f16
+  custom:scripting/monoscript/fileName/CopyBoneModifier.cs: 99ca21ad41528cde63b41f2f860362cf -> 508c2d99942e2f4d8399b2ed296a82d0
+  custom:scripting/monoscript/fileName/FPSAnimWeapon.cs: 9500912ea7b2c26a1fb403335d7fd4e4 -> d5f840f9b4fde3807af32ae3430e6793
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/IKinemationTool.cs: 3848806d514750bb974170ffa3926d4c -> cb6d44c9d7b50aaea4de586f958fcef2
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/FPSAnimWeaponEditor.cs: fcb351b0e03cc0364d15367f43e5063e -> b6018aa150917c7ce2c422fa5af0fd77
+  custom:scripting/monoscript/fileName/CoreAnimMixer.cs: 488ac31c6021af2968d687797f90cddc -> fec47d280c1900ab20c20dfdac626278
+  custom:scripting/monoscript/fileName/PoseBlending.cs: a463e403b428a0e07488a6265689789b -> 100f9bffad715639f44ea8b95ad78619
+  custom:scripting/monoscript/fileName/AimOffsetTable.cs: d85108dfa6e63751d61ea3378172d4d3 -> 6428cb7d1cc43047c1305a0235c011c2
+  custom:scripting/monoscript/fileName/LookAtLayer.cs: aff0d6a98e07c881c4e1de2dc30f99f8 -> 16fe5e0221e82b3af23976a4876c1a1b
+  custom:scripting/monoscript/fileName/AvatarMaskModifier.cs: d105556a10266457444151221890da79 -> b1cb856db5d05bdf860e25e5cfd7715a
+  custom:scripting/monoscript/fileName/AdsLayer.cs: 117bb97328a274bd01d11bc1010f3e76 -> 05675cff3eb1046219f291638341995d
+  custom:scripting/monoscript/fileName/CurveLib.cs: 33e0bc0296d2059e8dfe7481e1f24863 -> 50298465aaff0d6eba4edabc0bc443aa
+  custom:scripting/monoscript/fileName/WeaponAnimAsset.cs: 39daf10339f53bab939fe6e3c2a4663b -> e7df41ffb4c952c201f3443ac9ccea10
+  custom:scripting/monoscript/fileName/CurveEditorUtility.cs: 6a2ea40d466961a2b561c0d1d7f11b9b -> f1c2e5a418567211f99ba32467a9a30d
+  custom:scripting/monoscript/fileName/CoreToolkitLib.cs: 92dc845f7572a7ac3b175937bc2082b1 -> f3f314b60186e6487cde432bebfe9d5a
+  custom:scripting/monoscript/fileName/WeaponTypes.cs: f8c7ad2d5ac500b2932bb1e088883e45 -> 3ec45cf3336453316afa80e34d7f7478
+  custom:scripting/monoscript/fileName/CustomAttributes.cs: 5032f9e5918f90e0d17a7deec3066d85 -> df3530c0de9281da00776f09f7e23f50
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/WeaponCollision.cs: 12f0ae2eacce5dfda97773cd4e2bb6b7 -> 0d352cd31d6c8898fc558ca9055bb3f9
+  custom:scripting/monoscript/fileName/FPSCameraShake.cs: efea54439df2bdcb2cd4de34fc413163 -> 5e4fd28e71418774316dda2595597a0a
+  custom:scripting/monoscript/fileName/IKAdditiveGenerator.cs: 88d95d780149b12a54b38ccb2d30c8b1 -> 9241210e7b23ba93f542e1e5eea87e76
+  custom:scripting/monoscript/fileName/SlotLayer.cs: f7af4767f3683c43568628283a7f6913 -> f59180d4f0b7f95a1f1f8e1dbd9c8dc2
+  custom:scripting/monoscript/fileName/RootBoneRotator.cs: e1e94a4df12f7d3c0d7e8bdf4ac89606 -> d235dd704a0567230933f9b42587526c
+  custom:scripting/monoscript/fileName/LookLayer.cs: 29dbc968266055c3b1c2709954b9ca3f -> 125c6c46ef85fc4257f6ce040f0858e9
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/BlendAssetEditor.cs: 399ce438d159089dd441ca661c79e57e -> cdc16309bce2eafa9053ac7251789a0f
+  custom:scripting/monoscript/fileName/CameraData.cs: 5afed7ac1fa000c20810f60066837729 -> 224b7cf525fbd59f376d8b1333488138
+  custom:scripting/monoscript/fileName/BoneContainer.cs: c4fab1abb27828f5e2e0452be85c06d9 -> 3d2bfaaa18586bb98baa69eac3145f0b
+  custom:scripting/monoscript/fileName/CoreOverlayController.cs: 691c9ba420b12dd1cb9e87efa9c9b89e -> b7198ab3b715079f731a2f792a6214f0
+========================================================================
+Received Import Request.
+  Time since last request: 589.159049 seconds.
+  path: Assets/Khvostov.fbx
+  artifactKey: Guid(f80796b0f1bc1d447bfd4d16074b978a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Khvostov.fbx using Guid(f80796b0f1bc1d447bfd4d16074b978a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e052eccd50a987f5ed634de1d56abc4d') in 0.510281 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 41
+========================================================================
+Received Import Request.
+  Time since last request: 136.639315 seconds.
+  path: Assets/Placeholders
+  artifactKey: Guid(4208b67d6e4a95e42b6947922c3d2079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Placeholders using Guid(4208b67d6e4a95e42b6947922c3d2079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bef40dbc3cad9b75b41d7b6fcb4682b8') in 0.001177 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.003550 seconds.
+  path: Assets/Placeholders/Northern Limit
+  artifactKey: Guid(f79f43236a9084f49a70d53bd3d14a9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Placeholders/Northern Limit using Guid(f79f43236a9084f49a70d53bd3d14a9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d5cb5f2f30c5882bf339ccd4bce9a91') in 0.000841 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.357669 seconds.
+  path: Assets/Placeholders/Northern Limit/m0000b0.flver.obj
+  artifactKey: Guid(84fc40a7121d3eb408b9be8f9036189e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Placeholders/Northern Limit/m0000b0.flver.obj using Guid(84fc40a7121d3eb408b9be8f9036189e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a2be559c02080dceecf621480512a81') in 0.002390 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.009109 seconds.
+  path: Assets/Placeholders/Northern Limit/m2002b0.flver.obj
+  artifactKey: Guid(f581d08b947a0a14a9fcbcf7dc7833c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Placeholders/Northern Limit/m2002b0.flver.obj using Guid(f581d08b947a0a14a9fcbcf7dc7833c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3035b0522d0081b78689381030829dc3') in 0.003079 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.012751 seconds.
+  path: Assets/Placeholders/Northern Limit/m3001b0.flver.obj
+  artifactKey: Guid(64f788ba8ad18b04e9aa92d413250d05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Placeholders/Northern Limit/m3001b0.flver.obj using Guid(64f788ba8ad18b04e9aa92d413250d05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44a570c47088252d05830f6c777bc638') in 0.003554 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Placeholders/Northern Limit/m3000b0.flver.obj
+  artifactKey: Guid(5d2f5649650a9bb4cbc69d1cb34f40f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Placeholders/Northern Limit/m3000b0.flver.obj using Guid(5d2f5649650a9bb4cbc69d1cb34f40f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34af76f1276f6a1423140b8d1157d130') in 0.002884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Placeholders/Northern Limit/m2000b0.flver.obj
+  artifactKey: Guid(230f05045e4ce4d4083c4844fac9c1b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Placeholders/Northern Limit/m2000b0.flver.obj using Guid(230f05045e4ce4d4083c4844fac9c1b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23570e40df5b070b0ec7602a33b4a468') in 0.002751 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Placeholders/Northern Limit/m2003b0.flver.obj
+  artifactKey: Guid(591c14573c0222f4facfe095aaebcc32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Placeholders/Northern Limit/m2003b0.flver.obj using Guid(591c14573c0222f4facfe095aaebcc32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d4984700598621a0259440ba5b3bc16') in 0.002540 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
