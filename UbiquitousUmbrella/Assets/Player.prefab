@@ -109,18 +109,17 @@ MonoBehaviour:
   slideSpeedDecrease: 3
   wallRunSpeedIncrease: 2
   wallRunSpeedDecrease: 1.5
+  jumpCharges: 1
   speed: 0
-  runSpeed: 8
-  sprintSpeed: 12
-  crouchSpeed: 4
+  runSpeed: 6
+  sprintSpeed: 10
+  crouchSpeed: 3
   airSpeed: 0.2
-  climbSpeed: 5
+  climbSpeed: 4
+  jumpHeight: 2
   normalGravity: -13
   wallRunGravity: -1
-  jumpHeight: 5
   maxSlideTimer: 2
-  onLeftWall: 0
-  onRightWall: 0
   maxClimbTimer: 1
   maxWallJumpTimer: 0.1
 --- !u!1 &2995225255371669071

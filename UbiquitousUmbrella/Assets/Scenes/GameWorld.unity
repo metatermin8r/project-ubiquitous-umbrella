@@ -676,6 +676,37 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &534418202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 534418203}
+  m_Layer: 0
+  m_Name: RespawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &534418203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534418202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.08, y: 0.17, z: 1.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &718474703
 Mesh:
   m_ObjectHideFlags: 0
@@ -2983,6 +3014,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: runSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: climbSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: crouchSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 534418203}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3163,3 +3224,4 @@ SceneRoots:
   - {fileID: 37988686}
   - {fileID: 1070926145}
   - {fileID: 1259355421}
+  - {fileID: 534418203}
