@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO
+//Fall speed when stepping off of a ledge is wack, needs to be much more like falling after jumping.
+//Sliding needs to be possible when going down slopes, both on objects and terrain. That'll be a math-induced heacache.
+
 public class PlayerMovement : MonoBehaviour
 {
     //Self explanatory

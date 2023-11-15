@@ -2964,6 +2964,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1748652156348186615, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2234739935320100500, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3014,30 +3019,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+    - target: {fileID: 5595405370019830650, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
-      propertyPath: runSpeed
-      value: 6
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e8ace209263e9284fb31b07e8d7eddb0, type: 2}
+    - target: {fileID: 8458882179628765373, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.18005207
       objectReference: {fileID: 0}
-    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+    - target: {fileID: 8458882179628765373, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
-      propertyPath: climbSpeed
-      value: 4
+      propertyPath: m_LocalPosition.y
+      value: -0.20437166
       objectReference: {fileID: 0}
-    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+    - target: {fileID: 8458882179628765373, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
-      propertyPath: jumpHeight
-      value: 2
+      propertyPath: m_LocalPosition.z
+      value: 0.15678221
       objectReference: {fileID: 0}
-    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+    - target: {fileID: 8458882179628765373, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
-      propertyPath: crouchSpeed
-      value: 3
+      propertyPath: m_LocalRotation.w
+      value: 0.6833312
       objectReference: {fileID: 0}
-    - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
+    - target: {fileID: 8458882179628765373, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
-      propertyPath: sprintSpeed
-      value: 10
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458882179628765373, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.73010856
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458882179628765373, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458882179628765373, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 93.791
       objectReference: {fileID: 0}
     - target: {fileID: 8772443317728713304, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
