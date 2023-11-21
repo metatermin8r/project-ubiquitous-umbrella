@@ -4,12 +4,15 @@ using UnityEngine;
 
 //TODO
 //Fall speed when stepping off of a ledge is wack, needs to be much more like falling after jumping.
-//Sliding needs to be possible when going down slopes, both on objects and terrain. That'll be a math-induced heacache.
+
+//Sliding needs to be possible when going down slopes, both on objects and terrain, without needing to sprint.
+//^That'll be a math-induced heacache. Lydia, you like math, wanna take that one?
 
 public class PlayerMovement : MonoBehaviour
 {
     //Self explanatory
     CharacterController controller;
+    public GameObject playerCapsule; //public CapsuleCollider playerCapsule;
 
     //Variables for camera tilt and FOV change while wallrunning
     [Header("Player Camera Settings")]
@@ -461,7 +464,12 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.height = crouchHeight;
         controller.center = crouchingCenter;
-        transform.localScale = new Vector3(transform.localScale.x, crouchHeight, transform.localScale.z);
+
+        //Shift the local position of the player capsule collider up so it doesn't clip through the ground
+        playerCapsule.transform.localPosition = new Vector3(0f, 0.43f, 0f);
+
+        //Change the transform of the capsule and its collider to the proper crouch height
+        playerCapsule.transform.localScale = new Vector3(transform.localScale.x, crouchHeight, transform.localScale.z);
         isCrouching = true;
 
         //Logic for handling sliding, which occurs when you hold crouch while sprinting
@@ -482,7 +490,11 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.height = (startHeight * 2);
         controller.center = standingCenter;
-        transform.localScale = new Vector3(transform.localScale.x, startHeight, transform.localScale.z);
+
+        //Resets the local position and scale to the proper stats for upright movement
+        playerCapsule.transform.localPosition = new Vector3(0f, 0f, 0f);
+        playerCapsule.transform.localScale = new Vector3(transform.localScale.x, startHeight, transform.localScale.z);
+
         isCrouching = false;
         isSliding = false;
     }
