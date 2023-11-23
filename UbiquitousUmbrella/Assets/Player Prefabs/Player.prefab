@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCapsule: {fileID: 2995225255371669071}
   playerCamera: {fileID: 1962638523084972030}
-  specialFov: 120
+  specialFov: 100
   cameraChangeTime: 20
   wallRunTilt: 20
   tilt: 5
@@ -362,7 +362,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 90
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -500,7 +500,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 70
+  field of view: 77
   orthographic: 0
   orthographic size: 5
   m_Depth: 0

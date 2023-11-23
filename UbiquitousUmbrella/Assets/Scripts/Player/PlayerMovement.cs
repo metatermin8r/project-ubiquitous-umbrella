@@ -122,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         normalFov = playerCamera.fieldOfView;
         startHeight = transform.localScale.y;
+        respawnPoint = GameObject.Find("RespawnPoint").transform;
     }
 
     //Call this to increase the player's speed by the desired amount, passed as a float
