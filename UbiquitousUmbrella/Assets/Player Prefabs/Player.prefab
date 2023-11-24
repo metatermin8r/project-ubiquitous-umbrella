@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCapsule: {fileID: 2995225255371669071}
   playerCamera: {fileID: 1962638523084972030}
-  specialFov: 100
+  specialFov: 90
   cameraChangeTime: 20
   wallRunTilt: 20
   tilt: 5
@@ -111,11 +111,11 @@ MonoBehaviour:
   wallRunSpeedDecrease: 1.5
   jumpCharges: 1
   speed: 0
-  runSpeed: 6
-  sprintSpeed: 10
-  crouchSpeed: 3
+  runSpeed: 5
+  sprintSpeed: 8
+  crouchSpeed: 2.5
   airSpeed: 0.2
-  climbSpeed: 4
+  climbSpeed: 3
   jumpHeight: 2
   normalGravity: -13
   wallRunGravity: -1

@@ -6,7 +6,10 @@ using UnityEngine;
 //Fall speed when stepping off of a ledge is wack, needs to be much more like falling after jumping.
 
 //Sliding needs to be possible when going down slopes, both on objects and terrain, without needing to sprint.
-//^That'll be a math-induced heacache. Lydia, you like math, wanna take that one?
+//^That'll be a math-induced heacache. Lydia, you like math, wanna take that one? Actually, I may have an answer to this
+//Me, check U71 movement code, that controller had a solution to this
+
+//Crouch height and slide height need to be two different heights, shouldn't be a hard change.
 
 public class PlayerMovement : MonoBehaviour
 {
