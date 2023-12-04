@@ -14,14 +14,10 @@ public class CrosshairControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire2"))
+        if(Input.GetButtonDown("Fire1"))
         {
-            anim.SetTrigger("Aim");
+            anim.SetTrigger("Shoot");
         }
 
-        if (Input.GetButtonUp("Fire2"))
-        {
-            anim.SetTrigger("AimEnd");
-        }
     }
 }
