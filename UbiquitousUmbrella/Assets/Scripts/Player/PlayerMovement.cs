@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Assign an empty object here to use its transform as a respawn point for the player
     [Header("Player Respawn Point")]
-    public Transform respawnPoint;
+    public Transform respawnPoint = null;
 
     //A transform placed just under the "feet" of the player to check if they are on the ground
     [Header("Ground Check")]
