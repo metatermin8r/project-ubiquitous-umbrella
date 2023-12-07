@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private PlayerWeaponSelector weaponSelector;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0) && weaponSelector.activeGun != null)
+        {
+            weaponSelector.activeGun.Shoot();
+        }
     }
 }
