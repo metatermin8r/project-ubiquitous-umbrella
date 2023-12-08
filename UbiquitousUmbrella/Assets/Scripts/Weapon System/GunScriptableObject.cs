@@ -18,7 +18,7 @@ public class GunScriptableObject : ScriptableObject
     private MonoBehaviour activeMonoBehaviour;
     private GameObject model;
     private float lastShootTime;
-    //private Camera weaponCamera;
+    public Camera weaponCamera;
     private ParticleSystem weaponParticleSystem;
     private ObjectPool<TrailRenderer> trailPool;
 
@@ -33,8 +33,6 @@ public class GunScriptableObject : ScriptableObject
         model.transform.localPosition = spawnPoint;
         model.transform.localRotation = Quaternion.Euler(spawnRotation);
 
-        //weaponCamera = GameObject.Find("Player/Player Camera/Weapon Camera").GetComponent<Camera>();
-
         weaponParticleSystem = model.GetComponentInChildren<ParticleSystem>();
 
     }
@@ -47,7 +45,7 @@ public class GunScriptableObject : ScriptableObject
 
             weaponParticleSystem.Play();
 
-            Vector3 shootDirection = weaponParticleSystem.transform.forward //weaponCamera.transform.forward
+            Vector3 shootDirection = weaponCamera.transform.forward //weaponParticleSystem.transform.forward //weaponCamera.transform.forward
                 + new Vector3(
                     Random.Range(-weaponConfig.weaponSpread.x, weaponConfig.weaponSpread.x),
                     Random.Range(-weaponConfig.weaponSpread.y, weaponConfig.weaponSpread.y),
@@ -118,5 +116,4 @@ public class GunScriptableObject : ScriptableObject
 
         return trail;
     }
-
 }

@@ -41,10 +41,11 @@ public class PlayerMovement : MonoBehaviour
 
     //Vectors for horizontal world movement, vertical velocity, and player input
     Vector3 move;
-    [SerializeField] Vector3 Yvelocity;
+    Vector3 Yvelocity;
     Vector3 input;
     Vector3 forwardDirection;
 
+    [Header("Player State Bools (DEBUG)")]
     //Also pretty self explanatory, serialized for debug purposes to better reflect player state
     [SerializeField] bool isGrounded;
     [SerializeField] bool isSprinting;

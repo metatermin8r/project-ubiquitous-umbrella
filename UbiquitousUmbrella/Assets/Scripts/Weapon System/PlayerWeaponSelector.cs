@@ -10,6 +10,8 @@ public class PlayerWeaponSelector : MonoBehaviour
     [SerializeField]
     private Transform gunParent;
     [SerializeField]
+    private Camera gunCamera;
+    [SerializeField]
     private List<GunScriptableObject> guns;
     [SerializeField]
     //private PlayerIK playerIK; Player Animation stuff for later
@@ -30,6 +32,7 @@ public class PlayerWeaponSelector : MonoBehaviour
 
         activeGun = gun;
         gun.Spawn(gunParent, this);
+        gun.weaponCamera = gunCamera;
 
         //IK stuff for player animation later
         //Transform[] allChildren = gunParent.GetComponentsInChildren<Transform>();
