@@ -41,15 +41,15 @@ public class PlayerMovement : MonoBehaviour
 
     //Vectors for horizontal world movement, vertical velocity, and player input
     Vector3 move;
-    Vector3 Yvelocity;
+    [SerializeField] Vector3 Yvelocity;
     Vector3 input;
     Vector3 forwardDirection;
 
-    //Also pretty self explanatory
-    bool isGrounded;
-    bool isSprinting;
-    bool isCrouching;
-    bool isSliding;
+    //Also pretty self explanatory, serialized for debug purposes to better reflect player state
+    [SerializeField] bool isGrounded;
+    [SerializeField] bool isSprinting;
+    [SerializeField] bool isCrouching;
+    [SerializeField] bool isSliding;
     [SerializeField] bool isWallRunning;
 
     //Floats for the increase/decrease in speed the player goes through while stopping/starting sprinting or wallrunning
@@ -75,9 +75,11 @@ public class PlayerMovement : MonoBehaviour
     //Physics for jumping, falling, and wallrunning
     [Header("Player Jump Settings")]
     public float jumpHeight;
+    [SerializeField]
     float gravity;
     public float normalGravity;
     public float wallRunGravity;
+    public float fallingGravity;
 
     //Heights for crouching
     float startHeight;
@@ -125,7 +127,11 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         normalFov = playerCamera.fieldOfView;
         startHeight = transform.localScale.y;
-        respawnPoint = GameObject.Find("RespawnPoint").transform;
+
+        if (GameObject.Find("RespawnPoint") == true)
+        {
+            respawnPoint = GameObject.Find("RespawnPoint").transform;
+        }
     }
 
     //Call this to increase the player's speed by the desired amount, passed as a float
@@ -457,8 +463,15 @@ public class PlayerMovement : MonoBehaviour
     //This is basically just writing in our own form of Gravity, because Unity's built in physics are mid at best for players
     void ApplyGravity()
     {
-        //Checks if we're wallrunning, and applies that gravity, otherwise just uses normal gravity
-        gravity = isWallRunning ? wallRunGravity : isClimbing ? 0f : normalGravity;
+        //Magic piece of code I stole from my very first project. Fixes player falling at lightspeed if they go off a ledge without
+        //jumping. I don't understand why setting that specific value in that specific way fixes it, but it does.
+        if (isGrounded && Yvelocity.y < 0)
+        {
+            Yvelocity.y = -2f;
+        }
+
+        //Checks if we're wallrunning or falling, and applies the respective gravity values, otherwise just uses normal gravity
+        gravity = isWallRunning ? wallRunGravity : isClimbing ? 0f : !isGrounded ? fallingGravity : normalGravity;
         Yvelocity.y += gravity * Time.deltaTime;
         controller.Move(Yvelocity * Time.deltaTime);
     }
@@ -556,4 +569,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    //GIZMO DEBUG METHODS
+    //private void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawSphere(groundCheck.position, 0.2f);
+    //}
 }
