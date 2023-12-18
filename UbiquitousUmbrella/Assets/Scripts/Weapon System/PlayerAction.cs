@@ -9,9 +9,9 @@ public class PlayerAction : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && weaponSelector.activeGun != null)
+        if (weaponSelector.activeGun != null)
         {
-            weaponSelector.activeGun.Shoot();
+            weaponSelector.activeGun.Tick(Input.GetMouseButton(0)); //Has to be this way, looks wrong, weird bool BS
         }
     }
 }

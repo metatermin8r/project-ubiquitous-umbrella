@@ -15,5 +15,10 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 464
-  weaponSpread: {x: 0.01, y: 0.01, z: 0.01}
-  fireRate: 0.01
+  fireRate: 0.2
+  recoilRecoverySpeed: 0.5
+  maxSpreadTime: 5
+  spreadType: 1
+  weaponSpread: {x: 0.05, y: 0.05, z: 0.05}
+  spreadMultiplier: 0.1
+  spreadTexture: {fileID: 0}
