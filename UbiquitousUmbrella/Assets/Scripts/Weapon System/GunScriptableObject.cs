@@ -18,6 +18,10 @@ public class GunScriptableObject : ScriptableObject
     private MonoBehaviour activeMonoBehaviour;
     private GameObject model;
     private float lastShootTime;
+    private float initalClickTime;
+    private float stopShootingTime;
+    private bool lastFrameWantedToShoot;
+
     public Camera weaponCamera;
     private ParticleSystem weaponParticleSystem;
     private ObjectPool<TrailRenderer> trailPool;
@@ -39,19 +43,27 @@ public class GunScriptableObject : ScriptableObject
 
     public void Shoot()
     {
+        if (Time.time - lastShootTime - weaponConfig.fireRate > Time.deltaTime)
+        {
+            float lastDuration = Mathf.Clamp((stopShootingTime - initalClickTime), 0, weaponConfig.maxSpreadTime);
+
+            float lerpTime = (weaponConfig.recoilRecoverySpeed - (Time.time - stopShootingTime)) 
+                / weaponConfig.recoilRecoverySpeed;
+
+            initalClickTime = Time.time - Mathf.Lerp(0, lastDuration, Mathf.Clamp01(lerpTime));
+        }
+
         if (Time.time > weaponConfig.fireRate + lastShootTime)
         {
             lastShootTime = Time.time;
 
             weaponParticleSystem.Play();
 
-            Vector3 shootDirection = weaponCamera.transform.forward //weaponParticleSystem.transform.forward //weaponCamera.transform.forward
-                + new Vector3(
-                    Random.Range(-weaponConfig.weaponSpread.x, weaponConfig.weaponSpread.x),
-                    Random.Range(-weaponConfig.weaponSpread.y, weaponConfig.weaponSpread.y),
-                    Random.Range(-weaponConfig.weaponSpread.z, weaponConfig.weaponSpread.z)
-                    );
-            shootDirection.Normalize();
+            Vector3 spreadAmount = weaponConfig.GetSpread(Time.time - initalClickTime);
+
+            model.transform.forward += model.transform.TransformDirection(spreadAmount);
+
+            Vector3 shootDirection = weaponCamera.transform.forward + spreadAmount;
 
             if (Physics.Raycast(weaponParticleSystem.transform.position, shootDirection,
                 out RaycastHit hit, float.MaxValue, weaponConfig.hitMask))
@@ -64,6 +76,23 @@ public class GunScriptableObject : ScriptableObject
                     weaponParticleSystem.transform.position + (shootDirection * trailConfig.missDistance), 
                     new RaycastHit()));
             }
+        }
+    }
+
+    public void Tick(bool wantsToShoot)
+    {
+        model.transform.localRotation = Quaternion.Lerp(model.transform.localRotation, Quaternion.Euler(spawnRotation),
+            Time.deltaTime * weaponConfig.recoilRecoverySpeed);
+
+        if (wantsToShoot)
+        {
+            lastFrameWantedToShoot = true;
+            Shoot();
+        }
+        else if (!wantsToShoot && lastFrameWantedToShoot)
+        {
+            stopShootingTime = Time.time;
+            lastFrameWantedToShoot = false;
         }
     }
 
