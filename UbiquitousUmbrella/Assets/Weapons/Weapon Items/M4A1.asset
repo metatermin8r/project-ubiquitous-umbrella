@@ -18,6 +18,7 @@ MonoBehaviour:
     type: 3}
   spawnPoint: {x: -0.212, y: 0.042, z: 0}
   spawnRotation: {x: 0, y: -90, z: 0}
-  hasParticleSystem: 1
   weaponConfig: {fileID: 11400000, guid: 660757f9415d0124a9b4a76032451d66, type: 2}
+  damageConfig: {fileID: 11400000, guid: 13f70bcea47fdbd4280cf41298fda0ac, type: 2}
   trailConfig: {fileID: 11400000, guid: f416a54267086cb4a87809fe570baa2d, type: 2}
+  weaponCamera: {fileID: 0}

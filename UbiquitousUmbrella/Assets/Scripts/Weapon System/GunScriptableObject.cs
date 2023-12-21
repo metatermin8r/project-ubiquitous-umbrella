@@ -13,6 +13,7 @@ public class GunScriptableObject : ScriptableObject
     public Vector3 spawnRotation;
 
     public WeaponConfiguration weaponConfig;
+    public DamageConfigScriptableObject damageConfig;
     public BulletTrailConfiguration trailConfig;
 
     private MonoBehaviour activeMonoBehaviour;
@@ -122,6 +123,11 @@ public class GunScriptableObject : ScriptableObject
         //{
             //SurfaceManager.Instance.HandleImpact(hit.transform.gameObject, endPoint, hit.normal, impactType, 0);
         //}
+
+        if (hit.collider.TryGetComponent(out IDamageable damageable))
+        {
+            damageable.TakeDamage(damageConfig.GetDamage(distance));
+        }
 
         yield return new WaitForSeconds(trailConfig.duration);
         yield return null;
