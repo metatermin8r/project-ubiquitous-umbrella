@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitMask:
     serializedVersion: 2
-    m_Bits: 464
+    m_Bits: 1488
   fireRate: 0.2
   recoilRecoverySpeed: 0.5
   maxSpreadTime: 5

@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 427754322}
   - component: {fileID: 427754324}
   - component: {fileID: 427754323}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3279,7 +3279,7 @@ GameObject:
   - component: {fileID: 1145157061}
   - component: {fileID: 1145157060}
   - component: {fileID: 1145157059}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3461,6 +3461,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962638523084972030, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1527
       objectReference: {fileID: 0}
     - target: {fileID: 2234739935320100500, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
