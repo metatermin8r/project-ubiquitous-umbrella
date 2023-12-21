@@ -25,8 +25,7 @@ public class CamerController : MonoBehaviour
     void Start()
     {
         //Locks and hides cursor in standalone builds
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        LockCursor();
 
         movement = GetComponent<PlayerMovement>();
     }
@@ -34,16 +33,24 @@ public class CamerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Handles camera rotation based on mouse movement
-        rotY += Input.GetAxis("Mouse X") * sensitivity;
-        rotX += Input.GetAxis("Mouse Y") * sensitivity;
+        if (!PauseSystem.gameIsPaused)
+        {
+            //Handles camera rotation based on mouse movement
+            rotY += Input.GetAxis("Mouse X") * sensitivity;
+            rotX += Input.GetAxis("Mouse Y") * sensitivity;
 
-        //Handles clamping look rotation
-        rotX = Mathf.Clamp(rotX, minX, maxX);
+            //Handles clamping look rotation
+            rotX = Mathf.Clamp(rotX, minX, maxX);
 
-        //Actual rotation of player and camera
-        transform.localEulerAngles = new Vector3(0, rotY, 0);
-        playerCam.transform.localEulerAngles = new Vector3(-rotX, 0, movement.tilt); //We're assigning tilt here based on the
-                                                                                     //player movement script
+            //Actual rotation of player and camera
+            transform.localEulerAngles = new Vector3(0, rotY, 0);
+            playerCam.transform.localEulerAngles = new Vector3(-rotX, 0, movement.tilt); //We're assigning tilt here based on the
+        }                                                                            //player movement script
+    }
+    //Lock Cursor function
+    public void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

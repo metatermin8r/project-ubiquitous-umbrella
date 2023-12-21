@@ -122,6 +122,9 @@ public class PlayerMovement : MonoBehaviour
     float wallJumpTimer;
     public float maxWallJumpTimer;
 
+    //Used for pause bool
+    public PauseSystem PauseSystem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -215,8 +218,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Checks if game is paused
+        if (!PauseSystem.gameIsPaused)
+        {
         //Basic call for general inputs
-        HandleInput();
+            HandleInput();
+        }
+
 
         //Checks for walls around the player, handles entering the wallrunning state
         CheckWallRun();
