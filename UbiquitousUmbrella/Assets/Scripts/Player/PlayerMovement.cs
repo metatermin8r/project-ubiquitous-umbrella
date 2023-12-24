@@ -123,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxWallJumpTimer;
 
     //Used for pause bool
-    public PauseSystem PauseSystem;
+    public MenuManager MenuManager;
 
     // Start is called before the first frame update
     void Start()
@@ -219,7 +219,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //Checks if game is paused
-        if (!PauseSystem.gameIsPaused)
+        if (!MenuManager.gameIsPaused)
         {
         //Basic call for general inputs
             HandleInput();

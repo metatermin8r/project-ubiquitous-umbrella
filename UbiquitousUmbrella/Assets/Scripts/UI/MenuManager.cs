@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseSystem : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
 
     public static bool gameIsPaused;
     //references to canvases
     public GameObject pauseMenu;
     public GameObject PlayerHud;
+    public GameObject Inventory;
 
     // reference to camera controller for cursor lock state
 public AudioSource audio;
@@ -18,6 +19,7 @@ public AudioSource audio;
     {
         pauseMenu.SetActive(false);
         PlayerHud.SetActive(true);
+        Inventory.SetActive(false);
         LockCursor();
     }
     void Update()
@@ -30,6 +32,16 @@ public AudioSource audio;
         else
         {
             ResumeGame();
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            gameIsPaused = !gameIsPaused;
+            OpenInventory();
+        }
+        else
+        {
+            CloseInventory();
         }
     
     }
@@ -62,6 +74,36 @@ public AudioSource audio;
         }
 
     }
+
+    public void OpenInventory()
+    {
+        if (gameIsPaused)
+        {
+            Time.timeScale = 1f;
+            Inventory.SetActive(true);
+            PlayerHud.SetActive(false);
+            pauseMenu.SetActive(false);
+            UnlockCursor();
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
+    public void CloseInventory()
+    {
+        if (!gameIsPaused)
+        {
+            Time.timeScale = 1;
+            Inventory.SetActive(false);
+            pauseMenu.SetActive(false);
+            PlayerHud.SetActive(true);
+            LockCursor();
+        }
+    }
+
+
     //Goes back to main menu and sets gameIsPaused bool back to false
     public void MainMenuButton()
     {

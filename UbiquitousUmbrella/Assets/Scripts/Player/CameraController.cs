@@ -33,7 +33,7 @@ public class CamerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PauseSystem.gameIsPaused)
+        if (!MenuManager.gameIsPaused)
         {
             //Handles camera rotation based on mouse movement
             rotY += Input.GetAxis("Mouse X") * sensitivity;
