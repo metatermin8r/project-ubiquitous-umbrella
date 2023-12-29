@@ -9,8 +9,6 @@ using UnityEngine;
 //^That'll be a math-induced heacache. Lydia, you like math, wanna take that one? Actually, I may have an answer to this
 //Me, check U71 movement code, that controller had a solution to this
 
-//Crouch height and slide height need to be two different heights, shouldn't be a hard change.
-
 public class PlayerMovement : MonoBehaviour
 {
     //Self explanatory
@@ -48,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Player State Bools (DEBUG)")]
     //Also pretty self explanatory, serialized for debug purposes to better reflect player state
     [SerializeField] bool isGrounded;
-    [SerializeField] bool isSprinting;
+    [SerializeField] public bool isSprinting;
     [SerializeField] bool isCrouching;
     [SerializeField] bool isSliding;
     [SerializeField] bool isWallRunning;
@@ -124,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Used for pause bool
     public MenuManager MenuManager;
+    public bool pauseMenuActive;
 
     // Start is called before the first frame update
     void Start()
@@ -278,7 +277,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * Time.deltaTime);
 
         //Checks to see if the requirements for player death are met
-        Death();
+        FallRespawn();
 
         //Checks to see if the player is climbing
         CheckClimbing();
@@ -561,7 +560,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Handles "killing" the player, but the current logic in here just handles respawning them
-    void Death()
+    void FallRespawn()
     {
         //If the player falls below -30 on the Y axis
         if (transform.position.y < -30)
