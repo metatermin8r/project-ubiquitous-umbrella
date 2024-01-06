@@ -19,15 +19,24 @@ public abstract class Gun : Item
     public WeaponType weaponType;
 
     [Header("Weapon Stats")]
-    //public int damage;
-    public float timeBetweenShooting, spread, range, effectiveRange, reloadTime, timeBetweenShots; //aimSpread,
+    public float timeBetweenShooting;
+    public float spread, range, effectiveRange, reloadTime, timeBetweenShots; //aimSpread,
     public int bulletsPerTap, magazineSize, maxAmmo;
     public bool allowButtonHold;
     public bool multiBarrelWeapon;
     //public bool divideAmmo = false;
-    public int bulletsLeft, bulletsShot, roundsFired;
+
+    [Header("Interal Weapon int/float values")]
+    public int bulletsLeft;
+    public int bulletsShot;
+    public int roundsFired;
     public float defaultSpread;
-    public bool shooting, readyToShoot, reloading, zoomed;
+
+    [Header("Weapon State Bools")]
+    public bool shooting;
+    public bool readyToShoot;
+    public bool reloading;
+    public bool zoomed;
 
     [Header("References")]
     public Camera fpsCam;
@@ -42,6 +51,7 @@ public abstract class Gun : Item
     public TextMeshProUGUI hudAmmoCounter;
     //public TextMeshProUGUI gunAmmoCounter;
     //public int killFeedHowImageIndex;
+    public TrailRenderer bulletTrail;
 
     //[Header("Animation")]
     //public UnityEngine.Animations.Rigging.Rig weaponHandIk;

@@ -61,7 +61,7 @@ public class PlayerAction : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && !playerMovement.pauseMenuActive && !isSprinting)
         {
-            isReloading = true;
+            //isReloading = true;
             items[itemIndex].Reload();
         }
 
