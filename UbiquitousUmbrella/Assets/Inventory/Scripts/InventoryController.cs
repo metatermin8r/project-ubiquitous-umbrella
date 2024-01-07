@@ -163,8 +163,8 @@ public class InventoryController : MonoBehaviour
             rectTransform.SetParent(canvasTransform);
             rectTransform.SetAsLastSibling();
         // this is getting the object id that correlates to the item on the list in the inventory controller
-           // itemPickupable = GetComponent<ItemPickupable>();
-            int selectedItemID = UnityEngine.Random.Range(itemPickupable.itemData.itemID, itemPickupable.itemData.itemID + 1); //this sets the range from the itemID to the itemID plus one... which results in the itemID always being selected
+        // itemPickupable = GetComponent<ItemPickupable>();
+        int selectedItemID = itemPickupable.id; //UnityEngine.Random.Range(itemPickupable.id, itemPickupable.id + 1); //this sets the range from the itemID to the itemID plus one... which results in the itemID always being selected
             inventoryItem.Set(items[selectedItemID]);
             Debug.Log("you just picked up item: " + itemPickupable.itemData.itemID + " with controller");
     }

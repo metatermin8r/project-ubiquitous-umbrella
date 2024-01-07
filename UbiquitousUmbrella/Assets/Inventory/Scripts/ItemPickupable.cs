@@ -13,9 +13,12 @@ public class ItemPickupable : MonoBehaviour
     //reference to scriptable object
     public ItemData itemData;
 
+    public int id;
+
     void Start()
     {
         pickUpUI.SetActive(false);
+        id = itemData.itemID;
     }
 
     private void OnTriggerStay(Collider other)
@@ -24,9 +27,9 @@ public class ItemPickupable : MonoBehaviour
         {
             pickUpUI.SetActive(true);
             if (Input.GetKey(KeyCode.E)) { 
-               // Inventory.SetActive(true);
+                //Inventory.SetActive(true);
                 inventoryController.CreateRandomItem();
-                Debug.Log("you just picked up item:" + itemData.itemID);
+                Debug.Log("you just picked up item:" + id);
                 if (itemObject != null)
                 {
                     this.itemObject.SetActive(false);
