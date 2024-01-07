@@ -124,6 +124,9 @@ public class PlayerMovement : MonoBehaviour
     public MenuManager MenuManager;
     public bool pauseMenuActive;
 
+    //reference to inventory controller for item pickup ray cast
+    [SerializeField] InventoryController inventoryController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -263,6 +266,22 @@ public class PlayerMovement : MonoBehaviour
             {
                 isClimbing = false;
                 hasClimbed = true;
+            }
+        }
+        //checks if pickupable item is within range to be picked up
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+
+            if (Physics.Raycast(ray, out hitInfo, 3))
+            {
+                ItemPickupable item = hitInfo.collider.gameObject.GetComponent<ItemPickupable>();
+
+                if (item != null)
+                {
+                   //trigger void
+                }
             }
         }
 
