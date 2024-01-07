@@ -8,7 +8,7 @@ using UnityEngine.Animations.Rigging;
 public class HitscanWeapon : Gun
 {
     [Header("Weapon Camera")]
-    Camera weaponCam;
+    [SerializeField] Camera weaponCam;
 
     [Header("Player Movement and Action")]
     [SerializeField] PlayerAction playerAction;
@@ -25,7 +25,7 @@ public class HitscanWeapon : Gun
 
         //fpsCam = playerController.transform.GetChild(0).GetChild(0).GetComponent<Camera>(); //GameObject.Find("WeaponCamera").GetComponent<Camera>();
 
-        weaponCam = fpsCam; //fpsCam = weaponCam;
+        fpsCam = weaponCam;
 
         //if (weaponType == WeaponType.AssaultRifle)
         //{
@@ -170,13 +170,7 @@ public class HitscanWeapon : Gun
             //    PV.RPC("RPC_Shoot", RpcTarget.All, hit.point, hit.normal);
             //}
 
-            TrailRenderer trail = Instantiate(bulletTrail, particalEffect.transform.position, Quaternion.identity);
-            StartCoroutine(SpawnTrail(trail, hit));
-
-            //For variable curve damage system
-            float distance = Vector3.Distance(particalEffect.transform.position, hit.point);
-
-            hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).GetDamage(distance)); //.damage);
+            hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).damage);
             RPC_Shoot(hit.point, hit.normal); //PV.RPC("RPC_Shoot", RpcTarget.All, hit.point, hit.normal);
         }
 
@@ -224,7 +218,7 @@ public class HitscanWeapon : Gun
                 Destroy(bulletImpactObj, 7f);
                 bulletImpactObj.transform.SetParent(colliders[0].transform);
             }
-            //Debug.Log(hitPosition);
+            Debug.Log(hitPosition);
         }
     }
 
@@ -269,24 +263,6 @@ public class HitscanWeapon : Gun
     {
         hudAmmoCounter.SetText(bulletsLeft + "                            " + maxAmmo);
         //hudAmmoCounter.SetText(bulletsLeft / bulletsPerTap + "                            " + maxAmmo / bulletsPerTap);
-    }
-
-    private IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit)
-    {
-        float time = 0;
-        Vector3 startPosition = trail.transform.position;
-
-        while (time < 1)
-        {
-            trail.transform.position = Vector3.Lerp(startPosition, hit.point, time);
-            time += Time.deltaTime / trail.time;
-
-            yield return null;
-        }
-
-        trail.transform.position = hit.point;
-
-        Destroy(trail.gameObject, trail.time);
     }
 
     //All photon sound code
