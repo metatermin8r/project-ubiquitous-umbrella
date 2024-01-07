@@ -5168,8 +5168,60 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3806174348517628825}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9cce416b582aaf34782ffcb3fca3b8fd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4709653760690404175}
   m_SourcePrefab: {fileID: 100100000, guid: 9cce416b582aaf34782ffcb3fca3b8fd, type: 3}
+--- !u!1 &561641195254376271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9cce416b582aaf34782ffcb3fca3b8fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 795501477795846686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4709653760690404175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561641195254376271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce598fe2c3bedc845b5c3050e0f69f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfo: {fileID: 11400000, guid: e436bb6644265284d9c71a53922eda0c, type: 2}
+  itemGameObject: {fileID: 561641195254376271}
+  weaponType: 0
+  timeBetweenShooting: 0.1
+  spread: 0.04
+  range: 50
+  effectiveRange: 0
+  reloadTime: 2
+  timeBetweenShots: 0
+  bulletsPerTap: 1
+  magazineSize: 36
+  maxAmmo: 365
+  allowButtonHold: 1
+  multiBarrelWeapon: 0
+  bulletsLeft: 0
+  bulletsShot: 0
+  roundsFired: 0
+  defaultSpread: 0
+  shooting: 0
+  readyToShoot: 0
+  reloading: 0
+  zoomed: 0
+  fpsCam: {fileID: 0}
+  particalEffect: {fileID: 3806174348517628825}
+  bulletImpactPrefab: {fileID: 0}
+  muzzleFlash: {fileID: 3123791404518373395}
+  hudAmmoCounter: {fileID: 0}
+  weaponAnimator: {fileID: 0}
+  playerAction: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!4 &900870680519425525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9cce416b582aaf34782ffcb3fca3b8fd,
