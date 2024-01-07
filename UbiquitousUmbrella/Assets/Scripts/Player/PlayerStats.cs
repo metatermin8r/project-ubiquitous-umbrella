@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour, IDamageable
 {
-    [Header("UI References")]
-    [SerializeField] Image healthbarImage;
-    [SerializeField] Image staminabarImage;
-    //[SerializeField] GameObject ui;
-    //[SerializeField] PauseMenu pm;
+    [Header ("Health Stats")]
+    const float maxHealth = 100f;
+    public float currentHealth = maxHealth;
+    public Coroutine healthRegeneration;
+    [Range(0.0f, 10.0f)]
+    public float healthRegen = 0.1f;
+    public int healthRegenDelay = 2;
 
     [Header("Stamina Stats")]
     const float maxStamina = 100f;
@@ -20,13 +22,11 @@ public class PlayerStats : MonoBehaviour, IDamageable
     public float staminaRegen = 0.1f;
     public int staminaRegenDelay = 2;
 
-    [Header("Health Stats")]
-    const float maxHealth = 100f;
-    public float currentHealth = maxHealth;
-    public Coroutine healthRegeneration;
-    [Range(0.0f, 10.0f)]
-    public float healthRegen = 0.1f;
-    public int healthRegenDelay = 2;
+    [Header("UI References")]
+    [SerializeField] Image healthbarImage;
+    [SerializeField] Image staminabarImage;
+    //[SerializeField] GameObject ui;
+    //[SerializeField] PauseMenu pm;
 
     // Start is called before the first frame update
     void Start()
