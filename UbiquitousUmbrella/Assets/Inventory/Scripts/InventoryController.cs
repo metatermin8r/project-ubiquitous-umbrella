@@ -24,9 +24,6 @@ public class InventoryController : MonoBehaviour
     InventoryItem overlapItem;
     RectTransform rectTransform;
 
-    public ItemPickupable itemPickupable;
-    public bool isPickup;
-
     public static InventoryController instance;
 
 
@@ -35,6 +32,8 @@ public class InventoryController : MonoBehaviour
     [SerializeField] Transform canvasTransform;
 
     InventoryHighlight inventoryHighlight;
+
+    public List<HeldItem> heldItems = new List<HeldItem>();
 
     private void Awake()
     {
@@ -108,6 +107,56 @@ public class InventoryController : MonoBehaviour
         selectedItemGrid.PlaceItem(itemToInsert, posOnGrid.Value.x, posOnGrid.Value.y);
     }
 
+    //this adds and holds the items in the inventory
+    public void AddNewItem(HeldItem itemToAdd)
+    {
+
+        bool itemExists = false;
+        foreach (HeldItem item in heldItems)
+        {
+            if(item.name  == itemToAdd.name)
+            {
+                InventoryItem inventoryItem = Instantiate(itemPrefab).GetComponent<InventoryItem>(); //this assigns a data script to the item prefab
+                selectedItem = inventoryItem; //stored reference to selected item                    // then create an instance of it in the inventory grid
+                                              //...im pretty sure
+                rectTransform = inventoryItem.GetComponent<RectTransform>();
+                rectTransform.SetParent(canvasTransform);
+                rectTransform.SetAsLastSibling();
+                // this is getting the object id that correlates to the item on the list in the inventory controller
+                // itemPickupable = GetComponent<ItemPickupable>();
+                //UnityEngine.Random.Range(itemPickupable.id, itemPickupable.id + 1); //this sets the range from the itemID to the itemID plus one... which results in the itemID always being selected
+                int selectedItemID = item.id;
+                inventoryItem.Set(items[selectedItemID]);
+                Debug.Log("you just picked up item: " + item.id + " with controller");
+
+                item.count += itemToAdd.count;
+                itemExists = true;
+;
+                break;
+
+            }
+           
+        }
+        if(!itemExists)
+        {
+            heldItems.Add(itemToAdd);
+
+            InventoryItem inventoryItem = Instantiate(itemPrefab).GetComponent<InventoryItem>(); //this assigns a data script to the item prefab
+            selectedItem = inventoryItem; //stored reference to selected item                    // then create an instance of it in the inventory grid
+                                          //...im pretty sure
+            rectTransform = inventoryItem.GetComponent<RectTransform>();
+            rectTransform.SetParent(canvasTransform);
+            rectTransform.SetAsLastSibling();
+            // this is getting the object id that correlates to the item on the list in the inventory controller
+            // itemPickupable = GetComponent<ItemPickupable>();
+            //UnityEngine.Random.Range(itemPickupable.id, itemPickupable.id + 1); //this sets the range from the itemID to the itemID plus one... which results in the itemID always being selected
+            int selectedItemID = itemToAdd.id;
+            inventoryItem.Set(items[selectedItemID]);
+            Debug.Log("you just picked up item: " + itemToAdd.id + " with controller");
+        }
+        Debug.Log(itemToAdd.count + " " + itemToAdd.name + "added to inventory.");
+    }
+
     Vector2Int oldPosition;
     InventoryItem itemToHighlight;
 
@@ -120,7 +169,7 @@ public class InventoryController : MonoBehaviour
         oldPosition= positionOnGrid;
         if (selectedItem == null)
         {
-            Debug.Log("don't handle highlight, you have nothing selected, Position : " + positionOnGrid.y.ToString() + ", " + positionOnGrid.y.ToString());
+            //Debug.Log("don't handle highlight, you have nothing selected, Position : " + positionOnGrid.y.ToString() + ", " + positionOnGrid.y.ToString());
             //this is broken, I have no idea why.
             // if you start the game with the cursor outside of the game window it will throw an error!!
             //fix this so it doesnt try to run if cursor is out of range
@@ -164,9 +213,9 @@ public class InventoryController : MonoBehaviour
             rectTransform.SetAsLastSibling();
         // this is getting the object id that correlates to the item on the list in the inventory controller
         // itemPickupable = GetComponent<ItemPickupable>();
-        int selectedItemID = itemPickupable.id; //UnityEngine.Random.Range(itemPickupable.id, itemPickupable.id + 1); //this sets the range from the itemID to the itemID plus one... which results in the itemID always being selected
-            inventoryItem.Set(items[selectedItemID]);
-            Debug.Log("you just picked up item: " + itemPickupable.id + " with controller");
+            //int selectedItemID = item.id; //UnityEngine.Random.Range(itemPickupable.id, itemPickupable.id + 1); //this sets the range from the itemID to the itemID plus one... which results in the itemID always being selected
+           // inventoryItem.Set(items[selectedItemID]);
+            //Debug.Log("you just picked up item: " + item.id + " with controller");
     }
         private void LeftMouseButtonPress()
     {
