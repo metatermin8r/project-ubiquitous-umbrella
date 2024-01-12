@@ -3220,6 +3220,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1962638523084972030, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1495
+      objectReference: {fileID: 0}
     - target: {fileID: 2234739935320100500, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3270,6 +3275,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6082487742760348631, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: PlayerHud
+      value: 
+      objectReference: {fileID: 2116152445}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

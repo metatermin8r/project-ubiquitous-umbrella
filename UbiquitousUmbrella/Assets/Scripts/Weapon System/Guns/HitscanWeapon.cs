@@ -170,6 +170,8 @@ public class HitscanWeapon : Gun
             //    PV.RPC("RPC_Shoot", RpcTarget.All, hit.point, hit.normal);
             //}
 
+            //TODO: Update bullet trail system with object pooling from old system and better trail accuracy.
+            //Good starting point: https://forum.unity.com/threads/need-advice-on-making-high-speed-bullet-trails-with-raycasting.1211583/
             TrailRenderer trail = Instantiate(bulletTrail, particalEffect.transform.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
 
