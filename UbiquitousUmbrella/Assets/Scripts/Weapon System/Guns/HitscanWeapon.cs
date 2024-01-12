@@ -156,7 +156,7 @@ public class HitscanWeapon : Gun
 
         Ray ray = weaponCam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
         ray.origin = weaponCam.transform.position;
-        if(Physics.Raycast(weaponCam.transform.position, direction, out RaycastHit hit, range))
+        if(Physics.Raycast(weaponCam.transform.position, direction, out RaycastHit hit, range, whatIsEnemy))
         {
             //Possible damage falloff implementation, we'll see.
             //if (hit.distance > effectiveRange)
@@ -171,7 +171,7 @@ public class HitscanWeapon : Gun
             //}
 
             //TODO: Update bullet trail system with object pooling from old system and better trail accuracy.
-            //Good starting point: https://forum.unity.com/threads/need-advice-on-making-high-speed-bullet-trails-with-raycasting.1211583/
+            //Good starting point:
             TrailRenderer trail = Instantiate(bulletTrail, particalEffect.transform.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
 

@@ -42,7 +42,7 @@ public abstract class Gun : Item
     public Camera fpsCam;
     public Transform particalEffect;
     public RaycastHit rayHit;
-    //public LayerMask whatIsEnemy;
+    public LayerMask whatIsEnemy;
 
     [Header("Graphics")]
     public GameObject bulletImpactPrefab; //Change this from BulletHoleGraphic in old code

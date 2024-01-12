@@ -5222,6 +5222,9 @@ MonoBehaviour:
   zoomed: 0
   fpsCam: {fileID: 0}
   particalEffect: {fileID: 6691770432684702833}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 1216
   bulletImpactPrefab: {fileID: 0}
   muzzleFlash: {fileID: 4852102057790185467}
   hudAmmoCounter: {fileID: 0}
