@@ -166,7 +166,7 @@ public class InventoryController : MonoBehaviour
         // itemPickupable = GetComponent<ItemPickupable>();
         int selectedItemID = itemPickupable.id; //UnityEngine.Random.Range(itemPickupable.id, itemPickupable.id + 1); //this sets the range from the itemID to the itemID plus one... which results in the itemID always being selected
             inventoryItem.Set(items[selectedItemID]);
-            Debug.Log("you just picked up item: " + itemPickupable.itemData.itemID + " with controller");
+            Debug.Log("you just picked up item: " + itemPickupable.id + " with controller");
     }
         private void LeftMouseButtonPress()
     {

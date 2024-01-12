@@ -7,18 +7,19 @@ public class ItemPickupable : MonoBehaviour
     public GameObject itemObject;
     public InventoryController inventoryController;
     public GameObject pickUpUI;
+    public ItemDataHolder itemDataHolder;
     // public GameObject Inventory;
     //public int selectedItemID;
 
     //reference to scriptable object
-    public ItemData itemData;
+    //public ItemData itemData;
 
     public int id;
 
     void Start()
     {
         pickUpUI.SetActive(false);
-        id = itemData.itemID;
+        id = itemDataHolder.ItemNum;
     }
 
     private void OnTriggerStay(Collider other)

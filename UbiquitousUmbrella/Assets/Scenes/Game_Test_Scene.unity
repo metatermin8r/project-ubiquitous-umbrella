@@ -3220,11 +3220,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 1962638523084972030, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 1495
       objectReference: {fileID: 0}
+=======
+    - target: {fileID: 1966052716373329920, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: trackedObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966052716373329920, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: trackedObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1860479558}
+>>>>>>> Stashed changes
     - target: {fileID: 2234739935320100500, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3519,6 +3532,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1860479558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2620531238633253876, guid: a28958798a914a440b319980012ba194,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144578612877695426}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1959979095
 PrefabInstance:
   m_ObjectHideFlags: 0
