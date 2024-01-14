@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
     [Header("Stamina Stats")]
     const float maxStamina = 100f;
     public float currentStamina = maxStamina;
-    float staminaCost = 10;
+    //float staminaCost = 10;
     public Coroutine staminaRegeneration;
     [Range(0.0f, 10.0f)]
     public float staminaRegen = 0.1f;

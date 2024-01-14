@@ -3285,6 +3285,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4343884113336731819, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: whatIsEnemy.m_Bits
+      value: 6176
+      objectReference: {fileID: 0}
     - target: {fileID: 6082487742760348631, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
       propertyPath: PlayerHud

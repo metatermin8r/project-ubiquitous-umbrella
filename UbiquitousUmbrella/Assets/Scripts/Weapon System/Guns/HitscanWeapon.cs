@@ -28,7 +28,7 @@ public class HitscanWeapon : Gun
         weaponCam = fpsCam; //fpsCam = weaponCam;
 
         //if (weaponType == WeaponType.AssaultRifle)
-        //{
+        //{ 
         //    weaponHandIK = GameObject.Find("ARIKRig").GetComponent<Rig>();
         //    fpWeaponHandIK = GameObject.Find("ARFPIKRig").GetComponent<Rig>();
         //}
@@ -156,7 +156,7 @@ public class HitscanWeapon : Gun
 
         Ray ray = weaponCam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
         ray.origin = weaponCam.transform.position;
-        if(Physics.Raycast(weaponCam.transform.position, direction, out RaycastHit hit, range, whatIsEnemy))
+        if(Physics.Raycast(weaponCam.transform.position, direction, out RaycastHit hit, range, ~excludeFromRaycast))
         {
             //Possible damage falloff implementation, we'll see.
             //if (hit.distance > effectiveRange)
