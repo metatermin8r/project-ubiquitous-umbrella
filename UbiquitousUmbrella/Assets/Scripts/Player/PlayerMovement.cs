@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Player State Bools (DEBUG)")]
     //Also pretty self explanatory, serialized for debug purposes to better reflect player state
-    [SerializeField] bool isGrounded;
+    [SerializeField] public bool isGrounded;
     [SerializeField] public bool isSprinting;
     [SerializeField] bool isCrouching;
     [SerializeField] bool isSliding;

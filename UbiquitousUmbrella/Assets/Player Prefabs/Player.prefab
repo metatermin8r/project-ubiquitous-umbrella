@@ -1700,6 +1700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8458882179628765373}
+  - component: {fileID: 6872003528716052235}
   m_Layer: 9
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -1715,14 +1716,37 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3014831843247697681}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7301086, z: -0, w: 0.6833312}
-  m_LocalPosition: {x: 0.18005207, y: -0.42300007, z: 0.15678221}
+  m_LocalRotation: {x: -0, y: 0.7301087, z: -0, w: 0.6833311}
+  m_LocalPosition: {x: 0.18005286, y: -0.4229996, z: 0.15678412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8184192459081911825}
   m_Father: {fileID: 3406641072835198052}
   m_LocalEulerAnglesHint: {x: 0, y: 93.791, z: 0}
+--- !u!114 &6872003528716052235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014831843247697681}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83464c8d0f0b75f4ab50c9787aac76b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mover: {fileID: 8772443317728713304}
+  step: 0.01
+  maxStepDistance: 0.06
+  rotationStep: 4
+  maxRotationStep: 5
+  smooth: 10
+  speedCurve: 0
+  travelLimit: {x: 0.025, y: 0.025, z: 0.025}
+  bobLimit: {x: 0.01, y: 0.01, z: 0.01}
+  bobExaggeration: 0
+  multiplier: {x: 2, y: 2, z: 2}
 --- !u!1 &3861450904076007653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,14 +2632,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a57983c6edf644791e505b30e3506f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPickupable: {fileID: 0}
-  isPickup: 0
   items:
   - {fileID: 11400000, guid: 9212caae2d9102a4ba64dd5fd96704be, type: 2}
   - {fileID: 11400000, guid: 46fe3738b67d421429dae4343595a83f, type: 2}
   itemPrefab: {fileID: 8989642056162033108, guid: 8b94a7d2944371543972fb0b035a93bc,
     type: 3}
   canvasTransform: {fileID: 3937916795655791654}
+  heldItems: []
 --- !u!1 &6220840762595706779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3455,6 +3478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3406641072835198052}
   - component: {fileID: 7812451654315293674}
+  - component: {fileID: 6116098866738951576}
   m_Layer: 0
   m_Name: FPObjectSway
   m_TagString: Untagged
@@ -3485,13 +3509,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8621389717306822336}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2dad26907efc9084d97345120f362eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 4
   multiplier: 6
+--- !u!114 &6116098866738951576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8621389717306822336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83464c8d0f0b75f4ab50c9787aac76b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mover: {fileID: 8772443317728713304}
+  step: 0.01
+  maxStepDistance: 0.06
+  rotationStep: 4
+  maxRotationStep: 5
+  smooth: 10
+  speedCurve: 0
+  travelLimit: {x: 0.025, y: 0.025, z: 0.025}
+  bobLimit: {x: 0.01, y: 0.01, z: 0.01}
+  bobExaggeration: 0
+  multiplier: {x: 2, y: 2, z: 2}
 --- !u!1001 &1520897346128598028
 PrefabInstance:
   m_ObjectHideFlags: 0
