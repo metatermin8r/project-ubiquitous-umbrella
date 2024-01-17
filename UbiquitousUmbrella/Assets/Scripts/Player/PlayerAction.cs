@@ -101,7 +101,7 @@ public class PlayerAction : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && !playerMovement.pauseMenuActive)
         {
-            items[itemIndex].Super();
+            //items[itemIndex].Super();
         }
 
         if (Input.GetKeyDown(KeyCode.E) && !playerMovement.pauseMenuActive)

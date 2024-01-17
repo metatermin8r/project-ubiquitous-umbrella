@@ -14,5 +14,4 @@ public abstract class Item : MonoBehaviour
     public abstract void Pickup();
     public abstract void Melee();
     public abstract void Grenade();
-    public abstract void Super();
 }

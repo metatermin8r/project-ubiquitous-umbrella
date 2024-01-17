@@ -13,17 +13,19 @@ public abstract class Gun : Item
     public abstract override void Pickup();
     public abstract override void Melee();
     public abstract override void Grenade();
-    public abstract override void Super();
 
     [Header("Weapon Type")]
     public WeaponType weaponType;
 
+    //TODO: All of these need tooltips and comments, jfc I barely understand it anymore
     [Header("Weapon Stats")]
     public float timeBetweenShooting;
-    public float spread, range, effectiveRange, reloadTime, timeBetweenShots; //aimSpread,
+    public float spread, range, speed, effectiveRange, reloadTime, timeBetweenShots; //aimSpread,
     public int bulletsPerTap, magazineSize, maxAmmo;
     public bool allowButtonHold;
-    public bool multiBarrelWeapon;
+    public bool multiBarrelWeapon; //Investigate reimplementing this with optional values that show only if true
+    public bool hasBouncingBullets = false;
+    public float bounceDistance = 10f;
     //public bool divideAmmo = false;
 
     [Header("Interal Weapon int/float values")]

@@ -5204,6 +5204,7 @@ MonoBehaviour:
   timeBetweenShooting: 0.1
   spread: 0.04
   range: 50
+  speed: 100
   effectiveRange: 0
   reloadTime: 2
   timeBetweenShots: 0
@@ -5212,6 +5213,8 @@ MonoBehaviour:
   maxAmmo: 365
   allowButtonHold: 1
   multiBarrelWeapon: 0
+  hasBouncingBullets: 1
+  bounceDistance: 10
   bulletsLeft: 0
   bulletsShot: 0
   roundsFired: 0
