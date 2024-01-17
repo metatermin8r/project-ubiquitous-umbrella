@@ -74,6 +74,7 @@ public class InventoryController : MonoBehaviour
         {
             LeftMouseButtonPress();
         }
+
     }
 
     private void RotateItem() 
@@ -87,6 +88,7 @@ public class InventoryController : MonoBehaviour
     }
 
     //this is probably where you will need to set up picking up items from world
+    //this doesn't do anything anymore
     public void InsertRandomItem()
     {
         CreateRandomItem();
@@ -122,6 +124,7 @@ public class InventoryController : MonoBehaviour
                 rectTransform = inventoryItem.GetComponent<RectTransform>();
                 rectTransform.SetParent(canvasTransform);
                 rectTransform.SetAsLastSibling();
+
                 // this is getting the object id that correlates to the item on the list in the inventory controller
                 // itemPickupable = GetComponent<ItemPickupable>();
                 //UnityEngine.Random.Range(itemPickupable.id, itemPickupable.id + 1); //this sets the range from the itemID to the itemID plus one... which results in the itemID always being selected
@@ -153,6 +156,7 @@ public class InventoryController : MonoBehaviour
             int selectedItemID = itemToAdd.id;
             inventoryItem.Set(items[selectedItemID]);
             Debug.Log("you just picked up item: " + itemToAdd.id + " with controller");
+
         }
         Debug.Log(itemToAdd.count + " " + itemToAdd.name + "added to inventory.");
     }

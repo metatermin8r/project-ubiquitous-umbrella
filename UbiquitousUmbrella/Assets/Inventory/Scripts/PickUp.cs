@@ -5,12 +5,24 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public HeldItem item = new HeldItem("Item Name", 1, 1);
+    public GameObject pickUpUI;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) {
-            InventoryController.instance.AddNewItem(item);
-            Destroy(gameObject);
+        pickUpUI.SetActive(true);
+
+       if (Input.GetKey(KeyCode.E))
+        {
+            if (other.CompareTag("Player"))
+            {
+                InventoryController.instance.AddNewItem(item);
+                Destroy(gameObject);
+            }
         }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        pickUpUI.SetActive(false);
     }
 }
