@@ -155,21 +155,18 @@ public class HitscanWeapon : Gun
 
         if (Physics.Raycast(weaponCam.transform.position, direction, out RaycastHit hit, range, ~excludeFromRaycast))
         {
-            //Possible damage falloff implementation, we'll see.
-            //if (hit.distance > effectiveRange)
-            //{
-            //    hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).damage / 2);
-            //    PV.RPC("RPC_Shoot", RpcTarget.All, hit.point, hit.normal);
-            //}
-            //else
-            //{
-            //    hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).damage);
-            //    PV.RPC("RPC_Shoot", RpcTarget.All, hit.point, hit.normal);
-            //}
-
             //TODO: Update bullet trail system with object pooling from old system.
             TrailRenderer trail = Instantiate(bulletTrail, particalEffect.transform.position, Quaternion.identity);
-            StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, bounceDistance, true));
+
+            //Determines if the collider being hit is of a certain layer, and allows/doesn't allow bouncing based on that
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            {
+                StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, bounceDistance, true, false));
+            }
+            else
+            {
+                StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, bounceDistance, true, true));
+            }
 
             //For variable curve damage system
             float distance = Vector3.Distance(particalEffect.transform.position, hit.point);
@@ -180,7 +177,7 @@ public class HitscanWeapon : Gun
         else
         {
             TrailRenderer trail = Instantiate(bulletTrail, particalEffect.transform.position, Quaternion.identity);
-            StartCoroutine(SpawnTrail(trail, transform.position + direction * range, Vector3.zero, bounceDistance, false));
+            StartCoroutine(SpawnTrail(trail, transform.position + direction * range, Vector3.zero, bounceDistance, false, true));
         }
 
         //PlaySound(0);
@@ -274,7 +271,7 @@ public class HitscanWeapon : Gun
         //hudAmmoCounter.SetText(bulletsLeft / bulletsPerTap + "                            " + maxAmmo / bulletsPerTap);
     }
 
-    private IEnumerator SpawnTrail(TrailRenderer trail, Vector3 hitPoint, Vector3 hitNormal, float bounceDistance, bool madeImpact)
+    private IEnumerator SpawnTrail(TrailRenderer trail, Vector3 hitPoint, Vector3 hitNormal, float bounceDistance, bool madeImpact, bool canBounce)
     {
         Debug.Log("SpawnTrail started!");
         Vector3 startPosition = trail.transform.position;
@@ -293,27 +290,43 @@ public class HitscanWeapon : Gun
 
         trail.transform.position = hitPoint;
 
-        if (madeImpact)
+        if (madeImpact && canBounce)
         {
             //TODO: Play a particle system, like an impact or something, here when ready. Use Object Pooling.
             //Instantiate(ImpactParticleSystem, HitPoint, Quaternion.LookRotation(hitNormal));
 
-            //TODO: Realistically, this system should always been on. Write RNG code so that bullets bounce, say, 25% of the
-            //time, or only on certain surfaces when the surface manager comes into play.
-            if (hasBouncingBullets && bounceDistance > 0)
+            //TODO: Realistically, this system should have bullets bouncing X% of the time, but only on certain surfaces.
+            //This kinda works with layers now, but future Surface Manager implementation will do wonders.
+
+            //To consider: Replace RNG code with an array of random numbers, rather than having Unity generate them on the fly.
+            //Its more performant, probably. I mean hell, if it works for Doom and Quake it works for everything.
+
+            //VERY simple RNG code
+            float rngValue = Random.Range(0, 100);
+
+            if (hasBouncingBullets && bounceDistance > 0 && rngValue <= 25)
             {
                 Vector3 bounceDirection = Vector3.Reflect(direction, hitNormal);
 
                 if(Physics.Raycast(hitPoint, bounceDirection, out RaycastHit hit, bounceDistance, ~excludeFromRaycast))
                 {
-                    yield return StartCoroutine(SpawnTrail(trail, hit.point, hit.normal,
-                        bounceDistance - Vector3.Distance(hit.point, hitPoint), true));
+                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                    {
+                        yield return StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, 
+                            bounceDistance - Vector3.Distance(hit.point, hitPoint), true, false));
 
-                    hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).GetDamage(distance));
+                        hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).GetDamage(distance));
+                    }
+                    else
+                    {
+                        yield return StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, 
+                            bounceDistance - Vector3.Distance(hit.point, hitPoint), true, true));
+                    }
+                    
                 }
                 else
                 {
-                    yield return StartCoroutine(SpawnTrail(trail, bounceDirection * bounceDistance, Vector3.zero, 0, true));
+                    yield return StartCoroutine(SpawnTrail(trail, bounceDirection * bounceDistance, Vector3.zero, 0, true, true));
                 }
             }
         }

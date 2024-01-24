@@ -268,6 +268,8 @@ public class PlayerMovement : MonoBehaviour
                 hasClimbed = true;
             }
         }
+
+        //TODO: Move this to Player Action, trying keep non-movement related player stuff to a minimum in this script
         //checks if pickupable item is within range to be picked up
         if (Input.GetKeyDown(KeyCode.E))
         {
