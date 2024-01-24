@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c1988c7308b7242baeff49cfacb45c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   playerCapsule: {fileID: 2995225255371669071}
   playerCamera: {fileID: 1962638523084972030}
   specialFov: 90
@@ -1737,6 +1738,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mover: {fileID: 8772443317728713304}
+  controller: {fileID: 0}
+  sway: 1
+  swayRotation: 1
+  bobOffset: 1
+  bobSway: 1
   step: 0.01
   maxStepDistance: 0.06
   rotationStep: 4
@@ -3529,6 +3535,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mover: {fileID: 8772443317728713304}
+  controller: {fileID: 3403910712519155201}
+  sway: 1
+  swayRotation: 1
+  bobOffset: 1
+  bobSway: 1
   step: 0.01
   maxStepDistance: 0.06
   rotationStep: 4
@@ -3538,7 +3549,7 @@ MonoBehaviour:
   travelLimit: {x: 0.025, y: 0.025, z: 0.025}
   bobLimit: {x: 0.01, y: 0.01, z: 0.01}
   bobExaggeration: 0
-  multiplier: {x: 2, y: 2, z: 2}
+  multiplier: {x: 1.5, y: 1.5, z: 1.5}
 --- !u!1001 &1520897346128598028
 PrefabInstance:
   m_ObjectHideFlags: 0

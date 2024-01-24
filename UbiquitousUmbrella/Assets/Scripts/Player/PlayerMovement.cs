@@ -12,7 +12,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //Self explanatory
-    CharacterController controller;
+    public CharacterController controller;
     public GameObject playerCapsule; //public CapsuleCollider playerCapsule;
 
     //Variables for camera tilt and FOV change while wallrunning
@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        controller = this.GetComponent<CharacterController>();
         normalFov = playerCamera.fieldOfView;
         startHeight = transform.localScale.y;
 

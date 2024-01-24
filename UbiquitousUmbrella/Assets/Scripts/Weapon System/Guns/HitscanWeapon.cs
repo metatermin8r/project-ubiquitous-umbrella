@@ -308,6 +308,8 @@ public class HitscanWeapon : Gun
                 {
                     yield return StartCoroutine(SpawnTrail(trail, hit.point, hit.normal,
                         bounceDistance - Vector3.Distance(hit.point, hitPoint), true));
+
+                    hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).GetDamage(distance));
                 }
                 else
                 {
