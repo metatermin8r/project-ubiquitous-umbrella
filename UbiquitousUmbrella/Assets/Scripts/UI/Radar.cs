@@ -38,6 +38,17 @@ public class Radar : MonoBehaviour
             
         }
 
+       // foreach (GameObject o in trackedObjects)
+       // {
+           // if (k != null) Destroy(k);
+        //    k = Instantiate(radarPrefab, o.transform.position, Quaternion.identity);
+       //    radarObjects.Add(k);
+
+          
+       //     GameObject j = Instantiate(radarPrefab, o.transform.position, Quaternion.identity);
+       //     borderObjects.Add(j);
+            //Destroy(j, 1.0f);
+      //  }
 
     }
 

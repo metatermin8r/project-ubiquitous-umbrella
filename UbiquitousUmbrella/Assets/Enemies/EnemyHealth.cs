@@ -23,6 +23,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private const string Dead = "Dead";
     public bool IsAlive;
 
+    public GameObject enemyObject;
+
     public EnemyMovement enemyMovement;
     // Start is called before the first frame update
     void Start()
@@ -101,6 +103,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         enemyMovement.Die();
 
         Destroy(this);
+        Destroy(enemyObject, 20);
 
     }
 }

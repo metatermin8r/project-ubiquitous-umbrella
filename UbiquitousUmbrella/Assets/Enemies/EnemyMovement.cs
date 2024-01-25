@@ -20,6 +20,8 @@ public class EnemyMovement : MonoBehaviour
     private const string Jump = "Jump";
     private const string Landed = "Landed";
 
+    public FieldOfView FovScript;
+
     private void Awake()
     {
         Agent = GetComponent<NavMeshAgent>();
@@ -56,14 +58,18 @@ public class EnemyMovement : MonoBehaviour
 
         while (enabled)
         {
+            //if (FovScript.canSeePlayer)
+           // {
             Agent.SetDestination(Target.transform.position - (Target.transform.position - transform.position).normalized * 0.5f);
             
             yield return Wait;
+           // }
+
         }
     }
 
     public void Die()
     {
-        StopCoroutine(FollowTarget());
+        Agent.speed = 0f;
     }
 }
