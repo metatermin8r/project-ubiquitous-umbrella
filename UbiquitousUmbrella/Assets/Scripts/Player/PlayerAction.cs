@@ -6,6 +6,7 @@ public class PlayerAction : MonoBehaviour
 {
     public PlayerMovement playerMovement;
     public PlayerStats playerStats;
+    public AdvancedCamRecoil recoil;
 
     [Header("Active Inventory")]
     [SerializeField] Item[] items;
@@ -54,9 +55,10 @@ public class PlayerAction : MonoBehaviour
         //*This is what handles Mouse 1 input! This is how you make inputs! REMEMBER THIS SHIT AHHHHHHH!*
         //*                                                                                             *
         //***********************************************************************************************
-        if (Input.GetMouseButton(0)) //&& !pauseMenuActive)
+        if (Input.GetMouseButton(0) && !playerMovement.pauseMenuActive && !isSprinting) //&& !pauseMenuActive)
         {
             items[itemIndex].Use();
+            recoil.Fire(); //This should be disabled while firing
         }
 
         if (Input.GetKeyDown(KeyCode.R) && !playerMovement.pauseMenuActive && !isSprinting)
