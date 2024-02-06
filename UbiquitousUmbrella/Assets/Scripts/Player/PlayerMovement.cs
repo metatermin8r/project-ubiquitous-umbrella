@@ -583,8 +583,8 @@ public class PlayerMovement : MonoBehaviour
     //Handles "killing" the player, but the current logic in here just handles respawning them
     void FallRespawn()
     {
-        //If the player falls below -30 on the Y axis
-        if (transform.position.y < -30)
+        //If the player falls below -100 on the Y axis
+        if (transform.position.y < -100)
         {
             //If a respawn point has been assigned, move the player back there. Otherwise, just destroy the player
             //NOTE: Destroying the player forces you to resart play mode in the editor, or to manually close the game in build mode
