@@ -5258,7 +5258,7 @@ MonoBehaviour:
   timeBetweenShooting: 0.1
   spread: 0.04
   range: 50
-  speed: 100
+  speed: 200
   effectiveRange: 0
   reloadTime: 2
   timeBetweenShots: 0
@@ -5302,6 +5302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3b4c555ac3d824b937184e871a5591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitscanWeapon: {fileID: 0}
   recoilPosition: {fileID: 0}
   rotationPoint: {fileID: 0}
   positionalRecoilSpeed: 8
