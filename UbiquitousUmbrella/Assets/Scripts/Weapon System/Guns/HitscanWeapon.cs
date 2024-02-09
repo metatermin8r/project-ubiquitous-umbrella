@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //using Photon.Pun; Anything relating to Photon is for netcode, will need to be replaced later. Kept for reference.
 using TMPro;
 using UnityEngine.Animations.Rigging;
@@ -44,8 +45,13 @@ public class HitscanWeapon : Gun
         //}
 
         bulletsLeft = magazineSize;
-        if (hudAmmoCounter == null)
-            hudAmmoCounter = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter/HudAmmoCounter").GetComponent<TextMeshProUGUI>();
+
+        //if (hudAmmoCounter == null) For ammo counter
+            //hudAmmoCounter = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter/HudAmmoCounter").GetComponent<TextMeshProUGUI>();
+
+        if (ammobarImage == null)
+            ammobarImage = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter/border/Image").GetComponent<Image>();
+
         //weaponAnimator.SetBool("Reloading", false);
         readyToShoot = true;
         defaultSpread = spread;
@@ -63,7 +69,7 @@ public class HitscanWeapon : Gun
 
     public void OnEnable()
     {
-        //PlaySound(2); Need an audio manager
+        //PlaySound(2); Needs an audio manager
     }
 
     public void Update()
@@ -267,7 +273,8 @@ public class HitscanWeapon : Gun
 
     public void UpdateAmmoHud()
     {
-        hudAmmoCounter.SetText(bulletsLeft + "                            " + maxAmmo);
+        ammobarImage.fillAmount = (float)bulletsLeft / magazineSize;
+        //hudAmmoCounter.SetText(bulletsLeft + "                            " + maxAmmo);
         //hudAmmoCounter.SetText(bulletsLeft / bulletsPerTap + "                            " + maxAmmo / bulletsPerTap);
     }
 

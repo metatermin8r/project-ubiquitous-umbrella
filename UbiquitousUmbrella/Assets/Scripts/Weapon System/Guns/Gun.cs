@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Animations.Rigging;
 
@@ -50,8 +51,10 @@ public abstract class Gun : Item
     public GameObject bulletImpactPrefab; //Change this from BulletHoleGraphic in old code
     //GameObject bulletHole;
     public ParticleSystem muzzleFlash;
-    public TextMeshProUGUI hudAmmoCounter;
+    //public TextMeshProUGUI hudAmmoCounter; Main ammo counter component
     //public TextMeshProUGUI gunAmmoCounter;
+    //public bool hasAmmoBar = true; Here in case we want both in the future
+    public Image ammobarImage;
     //public int killFeedHowImageIndex;
     public TrailRenderer bulletTrail;
 

@@ -123,6 +123,7 @@ public class PlayerMovement : MonoBehaviour
     //Used for pause bool
     public MenuManager MenuManager;
     public bool pauseMenuActive;
+    public FirstPersonWeaponMovement weaponSway;
 
     //reference to inventory controller for item pickup ray cast
     [SerializeField] InventoryController inventoryController;
@@ -138,6 +139,8 @@ public class PlayerMovement : MonoBehaviour
         {
             respawnPoint = GameObject.Find("RespawnPoint").transform;
         }
+
+        weaponSway = gameObject.GetComponentInChildren<FirstPersonWeaponMovement>();
     }
 
     //Call this to increase the player's speed by the desired amount, passed as a float
@@ -225,6 +228,11 @@ public class PlayerMovement : MonoBehaviour
         {
         //Basic call for general inputs
             HandleInput();
+            weaponSway.EnableAll();
+        }
+        else if (MenuManager.gameIsPaused)
+        {
+            weaponSway.DisableAll();
         }
 
 

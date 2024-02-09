@@ -138,4 +138,19 @@ public class FirstPersonWeaponMovement : MonoBehaviour
         transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(swayEulerRot) * Quaternion.Euler(bobEulerRotation), Time.deltaTime * smoothRot);
     }
 
+    public void DisableAll()
+    {
+        sway = false;
+        swayRotation = false;
+        bobOffset = false;
+        bobSway = false;
+    }
+
+    public void EnableAll()
+    {
+        sway = true;
+        swayRotation = true;
+        bobOffset = true;
+        bobSway = true;
+    }
 }
