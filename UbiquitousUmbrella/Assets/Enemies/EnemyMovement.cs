@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private Animator Animator;
     public float UpdateSpeed = 0.1f; //how frequrntly to recalculaet path based on Target transform's position
-
+    public float Deg;
 
     private NavMeshAgent Agent;
     private AgentLinkMover LinkMover;
@@ -20,7 +20,9 @@ public class EnemyMovement : MonoBehaviour
     private const string Jump = "Jump";
     private const string Landed = "Landed";
 
-    public FieldOfView FovScript;
+    private bool canSeePlayer;
+
+    private Coroutine FollowCoroutine;
 
     private void Awake()
     {
@@ -31,9 +33,17 @@ public class EnemyMovement : MonoBehaviour
         LinkMover.OnLinkStart += HandleLinkStart;
     }
 
-    private void Start () 
+    public void StartChasing() 
     { 
-        StartCoroutine(FollowTarget());
+        if (FollowCoroutine == null)
+        {
+            FollowCoroutine = StartCoroutine(FollowTarget());
+        }
+        else
+        {
+            Debug.LogWarning("Called StartChasing on Enemy that is already chasing! This is likely a bug in some calling class!");
+        } 
+
     }
 
     private void HandleLinkStart()
@@ -57,14 +67,19 @@ public class EnemyMovement : MonoBehaviour
         WaitForSeconds Wait = new WaitForSeconds(UpdateSpeed);
 
         while (enabled)
-        {
-            //if (FovScript.canSeePlayer)
-           // {
-            Agent.SetDestination(Target.transform.position - (Target.transform.position - transform.position).normalized * 0.5f);
-            
-            yield return Wait;
-           // }
+        {      //this if statement controls whether or not th player is in the enemy's FOV
+            Vector3 dir = Target.transform.position - transform.position;
+            if(Mathf.Abs(Vector3.Angle(transform.forward, dir))<Deg) 
+            {
+                Agent.SetDestination(Target.transform.position - (Target.transform.position - transform.position).normalized * 0.5f);
+                canSeePlayer = true;
+            }
+            else
+            {
+                canSeePlayer = false;
+            }
 
+            yield return Wait;
         }
     }
 

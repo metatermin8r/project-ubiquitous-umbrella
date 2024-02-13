@@ -8,7 +8,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [Header("UI References")]
     [SerializeField] Image healthbarImage;
 
-    [SerializeField] GameObject healthUI;
 
     [Header("Health Stats")]
     const float maxHealth = 100f;
@@ -74,7 +73,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
             //PV.RPC("RPC_KillListWithHow", RpcTarget.All, killer, PV.Owner.NickName, "killed"); 
             StopCoroutine(healthRegeneration);
-            healthUI.SetActive(false);
+            //healthUI.SetActive(false);
 
             Die(); //Kills player as normal
         }
