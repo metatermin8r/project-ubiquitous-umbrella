@@ -1,25 +1,52 @@
 using System.Collections;
-using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Reflection;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
     public HeldItem item = new HeldItem("Item Name", 1, 1);
     public GameObject pickUpUI;
+    public Transform InteractorSource; //this is a reference to the player 
+    public float InteractRange; //the distance from which you can pick up an object
 
-    void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        pickUpUI.SetActive(true);
+        pickUpUI.SetActive(false);
+    }
 
-       if (Input.GetKey(KeyCode.E))
+    private void Update()
+    {
+        Ray ray = new Ray(InteractorSource.position, InteractorSource.forward);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, InteractRange))
         {
-            if (other.CompareTag("Player"))
+            pickUpUI.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 InventoryController.instance.AddNewItem(item);
                 Destroy(gameObject);
+                pickUpUI.SetActive(false);
             }
         }
+        else
+        {
+            pickUpUI.SetActive(false);
+        }
     }
+
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    pickUpUI.SetActive(true);
+
+    //   if (Input.GetKey(KeyCode.E))
+    //    {
+    //        if (other.CompareTag("Player"))
+    //        {
+    //            InventoryController.instance.AddNewItem(item);
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //}
 
     void OnTriggerExit(Collider other)
     {

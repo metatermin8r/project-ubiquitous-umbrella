@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e53e62a635a504da62a3a121265ead, type: 3}
   m_Name: Grenade
   m_EditorClassIdentifier: 
+  reference: Grenade
   width: 1
   height: 1
   itemID: 1

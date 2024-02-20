@@ -839,10 +839,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9cce416b582aaf34782ffcb3fca3b8fd,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5071531014097061921}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9cce416b582aaf34782ffcb3fca3b8fd,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2149310964087747150}
   m_SourcePrefab: {fileID: 100100000, guid: 9cce416b582aaf34782ffcb3fca3b8fd, type: 3}
 --- !u!1 &3918051983612699198 stripped
@@ -872,23 +868,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.09, y: 0.3, z: 1}
   m_Center: {x: 0, y: 0.2, z: 0}
---- !u!114 &5071531014097061921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3918051983612699198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9dd2d5601114864d8545d1f49f5c531, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: AR15
-    count: 1
-    id: 0
-  pickUpUI: {fileID: 0}
 --- !u!54 &2149310964087747150
 Rigidbody:
   m_ObjectHideFlags: 0
