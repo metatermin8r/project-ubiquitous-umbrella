@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 276, y: 629}
-  m_SizeDelta: {x: 640, y: 448}
+  m_AnchoredPosition: {x: 350, y: 472}
+  m_SizeDelta: {x: 480, y: 320}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5861260399400570225
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 93a86723928a5dc43961351b0b18ed7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2a9cef01cd948c43a9d1da5c1a28b37, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3091eeac0e0554d8f136555e73b89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSizeWidth: 10
-  gridSizeHeight: 7
+  gridSizeWidth: 15
+  gridSizeHeight: 10
 --- !u!114 &2761250338219975234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 3430104056916511784}
   - component: {fileID: 8772443317728713304}
   - component: {fileID: 1966052716373329920}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -431,16 +431,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackedObjects:
   - {fileID: 0}
-  - {fileID: 0}
   radarPrefab: {fileID: 5189028387729467737, guid: 8bc8755c72f643346901286e5e6c9178,
     type: 3}
   switchDistance: 5
   helpTransform: {fileID: 8801861775785482786}
-<<<<<<< Updated upstream
   renderRange: 0
-=======
-  renderRange: 20
->>>>>>> Stashed changes
 --- !u!1 &660928144395661405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,7 +1992,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 222451635fd1f1d45b23be408d64fb29, type: 2}
+  - {fileID: 2100000, guid: 9f10b14ee18972141afa9946be5bd57e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2509,7 +2504,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 7944617182699167350}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4294967295
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
