@@ -7,8 +7,8 @@ public class ItemGrid : MonoBehaviour
 {
     // size of individual tiles used in the math to calculate location of tile 
     //will need to change if a different tile size is used!
-    public const float tileSizeWidth = 32;
-    public const float tileSizeHeight = 32;
+    public const float tileSizeWidth = 64;
+    public const float tileSizeHeight = 64;
 
     InventoryItem[,] inventoryItemSlot;
 
@@ -16,8 +16,8 @@ public class ItemGrid : MonoBehaviour
     RectTransform rectTransform;
 
     //allows you to set the size of the inventory in the editor
-    [SerializeField] int gridSizeWidth = 15;
-    [SerializeField] int gridSizeHeight = 10;
+    [SerializeField] int gridSizeWidth = 10;
+    [SerializeField] int gridSizeHeight = 7;
 
     
 

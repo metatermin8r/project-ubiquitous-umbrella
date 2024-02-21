@@ -24,6 +24,8 @@ public class InventoryController : MonoBehaviour
     InventoryItem overlapItem;
     RectTransform rectTransform;
 
+    private GameObject dropped;
+
     public static InventoryController instance;
 
 
@@ -74,6 +76,17 @@ public class InventoryController : MonoBehaviour
         {
             LeftMouseButtonPress();
         }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            //DropItem(item);
+            Debug.Log("You have destroyed " + dropped);
+
+            Destroy(selectedItem);
+        }
+
+       
+
 
     }
 
@@ -134,12 +147,14 @@ public class InventoryController : MonoBehaviour
 
                 item.count += itemToAdd.count;
                 itemExists = true;
-;
+
+
                 break;
 
             }
-           
+
         }
+
         if(!itemExists)
         {
             heldItems.Add(itemToAdd);
@@ -159,6 +174,20 @@ public class InventoryController : MonoBehaviour
 
         }
         Debug.Log(itemToAdd.count + " " + itemToAdd.name + "added to inventory.");
+    }
+
+    public void DropItem(HeldItem itemToDrop)
+    {
+
+        if (selectedItem != null)
+        {
+            heldItems.Remove(itemToDrop);
+            // this is getting the object id that correlates to the item on the list in the inventory controller
+            int selectedItemID = itemToDrop.id;
+            //inventoryItem.Set(items[selectedItemID]);
+            Debug.Log("you just dropped item: " + itemToDrop.id + " with controller");
+
+        }
     }
 
     Vector2Int oldPosition;
