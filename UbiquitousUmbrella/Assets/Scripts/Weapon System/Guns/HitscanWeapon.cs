@@ -15,6 +15,7 @@ public class HitscanWeapon : Gun
     [SerializeField] PlayerAction playerAction;
     [SerializeField] PlayerMovement playerController;
     [SerializeField] AdvancedCamRecoil recoil;
+    [SerializeField] FirstPersonWeaponMovement weaponSway;
 
     //PhotonView PV;
 
@@ -25,6 +26,7 @@ public class HitscanWeapon : Gun
         playerController = GetComponentInParent<PlayerMovement>();
         playerAction = GetComponentInParent<PlayerAction>();
         recoil = GetComponentInParent<AdvancedCamRecoil>();
+        weaponSway = GetComponentInParent<FirstPersonWeaponMovement>();
 
         //fpsCam = playerController.transform.GetChild(0).GetChild(0).GetComponent<Camera>(); //GameObject.Find("WeaponCamera").GetComponent<Camera>();
 
@@ -47,9 +49,6 @@ public class HitscanWeapon : Gun
         }
 
         bulletsLeft = magazineSize;
-
-        //if (hudAmmoCounter == null) For ammo counter
-            //hudAmmoCounter = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter/HudAmmoCounter").GetComponent<TextMeshProUGUI>();
 
         //Gotta rework this so its not hardcoded, everything will just break when Lyd changes things.
         if (ammobarImage == null)
@@ -94,10 +93,10 @@ public class HitscanWeapon : Gun
                 weaponAnimator.SetBool("Sprinting", false);
         }
 
-        //if (!playerController.isZoomed)
-        //{
-        //    weaponAnimator.SetBool("Zoom", false);
-        //}
+        if (!playerAction.isZoomed)
+        {
+            weaponAnimator.SetBool("Aiming", false);
+        }
     }
 
     public override void Use()
@@ -127,10 +126,10 @@ public class HitscanWeapon : Gun
     }
     public override void Zoom()
     {
-        //if (playerController.isZoomed)
-        //{
-        //    weaponAnimator.SetBool("Zoom", true);
-        //}
+        if (playerAction.isZoomed)
+        {
+            weaponAnimator.SetBool("Aiming", true);
+        }
     }
 
     public override void Sprint()

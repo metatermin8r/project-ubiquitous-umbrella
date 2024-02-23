@@ -116,7 +116,11 @@ public class PlayerAction : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && !playerMovement.pauseMenuActive)
         {
-            //Pickup code goes here
+            //****************************************
+            //*                                      *
+            //*Lydia, your item pickup code goes here*
+            //*                                      *
+            //****************************************
         }
 
         //if (Input.GetKeyDown(KeyCode.Escape))

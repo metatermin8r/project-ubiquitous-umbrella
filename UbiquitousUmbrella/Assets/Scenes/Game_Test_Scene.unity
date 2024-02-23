@@ -3435,7 +3435,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerHud
       value: 
-      objectReference: {fileID: 2116152445}
+      objectReference: {fileID: 0}
     - target: {fileID: 6191696566809560782, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
       propertyPath: itemGameObject
@@ -3444,7 +3444,7 @@ PrefabInstance:
     - target: {fileID: 8064884760511952620, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

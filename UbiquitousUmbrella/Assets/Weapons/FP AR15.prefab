@@ -8863,6 +8863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7281445822174871402}
   - component: {fileID: 8009940891178770278}
+  - component: {fileID: 6529486457284638772}
   m_Layer: 9
   m_Name: FP AR15
   m_TagString: Untagged
@@ -8937,6 +8938,28 @@ MonoBehaviour:
   fpWeaponHandIK: {fileID: 0}
   playerAction: {fileID: 0}
   playerController: {fileID: 0}
+  recoil: {fileID: 0}
+--- !u!95 &6529486457284638772
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946378105869592016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e1e0d1dcd4a54f4eab3b6c3b302d409, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8528999622492441038
 GameObject:
   m_ObjectHideFlags: 0

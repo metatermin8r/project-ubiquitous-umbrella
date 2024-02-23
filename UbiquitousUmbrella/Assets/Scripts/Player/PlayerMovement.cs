@@ -223,18 +223,32 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Checks if game is paused
-        if (!MenuManager.gameIsPaused)
+
+        //This is a very hacky solution to the fact that this code used to call weaponSway.EnableAll every frame
+        //That can't happen, so things are handled seperately with roughly the same logic.
+        //Lydia, this really needs to be in PlayerAction or some other catch-all script and not PlayerMovement.
+        //*******************************************
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-        //Basic call for general inputs
-            HandleInput();
-            weaponSway.EnableAll();
-        }
-        else if (MenuManager.gameIsPaused)
-        {
-            weaponSway.DisableAll();
+            //Checks if game is paused
+            if (!MenuManager.gameIsPaused)
+            {
+                //Basic call for general inputs
+                HandleInput();
+                weaponSway.pmEnableAll();
+            }
+            else if (MenuManager.gameIsPaused)
+            {
+                weaponSway.pmDisableAll();
+            }
         }
 
+        if (!MenuManager.gameIsPaused)
+        {
+            //Basic call for general inputs
+            HandleInput();
+        }
+        //*******************************************
 
         //Checks for walls around the player, handles entering the wallrunning state
         CheckWallRun();

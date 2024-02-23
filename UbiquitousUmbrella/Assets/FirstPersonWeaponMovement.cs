@@ -127,6 +127,8 @@ public class FirstPersonWeaponMovement : MonoBehaviour
 
     void BobRotation()
     {
+        if (bobSway == false) { bobEulerRotation = Vector3.zero; return; }
+
         bobEulerRotation.x = (walkInput != Vector2.zero ? multiplier.x * (Mathf.Sin(2 * speedCurve)) : multiplier.x * (Mathf.Sin(2 * speedCurve) / 2));
         bobEulerRotation.y = (walkInput != Vector2.zero ? multiplier.y * curveCos : 0);
         bobEulerRotation.z = (walkInput != Vector2.zero ? multiplier.z * curveCos * walkInput.x : 0);
@@ -152,5 +154,18 @@ public class FirstPersonWeaponMovement : MonoBehaviour
         swayRotation = true;
         bobOffset = true;
         bobSway = true;
+    }
+
+    public void pmDisableAll()
+    {
+        sway = false;
+        swayRotation = false;
+        bobOffset = false;
+    }
+    public void pmEnableAll()
+    {
+        sway = true;
+        swayRotation = true;
+        bobOffset = true;
     }
 }

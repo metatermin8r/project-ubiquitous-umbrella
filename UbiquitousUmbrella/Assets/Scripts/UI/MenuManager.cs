@@ -17,6 +17,9 @@ public AudioSource audio;
 
     void Start()
     {
+        //Finds the player hud so it doesn't have to be manually assigned.
+        PlayerHud = GameObject.Find("Player_Hud");
+
         pauseMenu.SetActive(false);
         PlayerHud.SetActive(true);
         Inventory.SetActive(false);
