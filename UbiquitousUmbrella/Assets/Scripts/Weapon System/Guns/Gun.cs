@@ -63,7 +63,7 @@ public abstract class Gun : Item
     public Animator weaponAnimator;
     //public Animator playerAnimator; I don't remember why this is here, disabling for now
     //public Rig weaponHandIK;
-    //public Rig fpWeaponHandIK;
+    public Rig fpWeaponHandIK;
     //public bool isSprinting;
 
     //[Header("Audio")]

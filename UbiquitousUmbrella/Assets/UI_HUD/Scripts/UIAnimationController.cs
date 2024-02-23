@@ -14,13 +14,29 @@ public class UIAnimationController : MonoBehaviour
     }
     void Update()
     {
-        if (!isSwapped && Input.GetKeyDown(KeyCode.N))
+        //if (!isSwapped && Input.GetKeyDown(KeyCode.N))
+        //{
+        //    primaryWeaponUI.SwapWeaponAnimation();
+        //    secondaryWeaponUI.SwapWeaponAnimation();
+        //    isSwapped = true;
+        //}
+        //else if (isSwapped && Input.GetKeyDown(KeyCode.N))
+        //{
+        //    primaryWeaponUI.SwapBackWeaponAnimation();
+        //    secondaryWeaponUI.SwapBackWeaponAnimation();
+        //    isSwapped = false;
+        //}
+    }
+
+    public void PlaySwapWeaponAnimation()
+    {
+        if (!isSwapped)
         {
             primaryWeaponUI.SwapWeaponAnimation();
             secondaryWeaponUI.SwapWeaponAnimation();
             isSwapped = true;
         }
-        else if (isSwapped && Input.GetKeyDown(KeyCode.N))
+        else if (isSwapped)
         {
             primaryWeaponUI.SwapBackWeaponAnimation();
             secondaryWeaponUI.SwapBackWeaponAnimation();

@@ -6,7 +6,7 @@ public class PlayerAction : MonoBehaviour
 {
     public PlayerMovement playerMovement;
     public PlayerStats playerStats;
-    public AdvancedCamRecoil recoil;
+    public UIAnimationController uiAnimationController;
 
     [Header("Active Inventory")]
     [SerializeField] Item[] items;
@@ -25,7 +25,12 @@ public class PlayerAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //All item prefabs should default to their unequipped states and equipped through code.
+        //This call handles that intial equip.
+        EquipItem(0);
+
+        if (uiAnimationController == null)
+            uiAnimationController = GameObject.Find("Player_Hud/UIAnimatorController").GetComponent<UIAnimationController>();
     }
 
     // Update is called once per frame
@@ -33,6 +38,8 @@ public class PlayerAction : MonoBehaviour
     {
         if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
         {
+            uiAnimationController.PlaySwapWeaponAnimation();
+
             if (itemIndex >= items.Length - 1)
             {
                 EquipItem(0);
@@ -42,6 +49,8 @@ public class PlayerAction : MonoBehaviour
         }
         else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
         {
+            uiAnimationController.PlaySwapWeaponAnimation();
+
             if (itemIndex <= 0)
             {
                 EquipItem(items.Length - 1);
@@ -58,7 +67,6 @@ public class PlayerAction : MonoBehaviour
         if (Input.GetMouseButton(0) && !playerMovement.pauseMenuActive && !isSprinting) //&& !pauseMenuActive)
         {
             items[itemIndex].Use();
-            recoil.Fire(); //This should be disabled while firing
         }
 
         if (Input.GetKeyDown(KeyCode.R) && !playerMovement.pauseMenuActive && !isSprinting)
@@ -138,13 +146,13 @@ public class PlayerAction : MonoBehaviour
         items[itemIndex].itemGameObject.SetActive(true);
         //killFeedHowImage = items[itemIndex].GetComponent<SingleShotGun>().killFeedHowImageIndex;
         //items[itemIndex].GetComponent<SingleShotGun>().weaponHandIK.weight = 1.0f;
-        //items[itemIndex].GetComponent<SingleShotGun>().fpWeaponHandIK.weight = 1.0f;
+        items[itemIndex].GetComponent<HitscanWeapon>().fpWeaponHandIK.weight = 1.0f;
 
         if (previousItemIndex != -1)
         {
             items[previousItemIndex].itemGameObject.SetActive(false);
             //items[previousItemIndex].GetComponent<SingleShotGun>().weaponHandIK.weight = 0.0f;
-            //items[previousItemIndex].GetComponent<SingleShotGun>().fpWeaponHandIK.weight = 0.0f;
+            items[previousItemIndex].GetComponent<HitscanWeapon>().fpWeaponHandIK.weight = 0.0f;
         }
 
         previousItemIndex = itemIndex;

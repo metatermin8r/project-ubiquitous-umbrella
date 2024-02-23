@@ -14,6 +14,7 @@ public class HitscanWeapon : Gun
     [Header("Player Movement and Action")]
     [SerializeField] PlayerAction playerAction;
     [SerializeField] PlayerMovement playerController;
+    [SerializeField] AdvancedCamRecoil recoil;
 
     //PhotonView PV;
 
@@ -23,34 +24,36 @@ public class HitscanWeapon : Gun
 
         playerController = GetComponentInParent<PlayerMovement>();
         playerAction = GetComponentInParent<PlayerAction>();
+        recoil = GetComponentInParent<AdvancedCamRecoil>();
 
         //fpsCam = playerController.transform.GetChild(0).GetChild(0).GetComponent<Camera>(); //GameObject.Find("WeaponCamera").GetComponent<Camera>();
 
         weaponCam = fpsCam; //fpsCam = weaponCam;
 
-        //if (weaponType == WeaponType.AssaultRifle)
-        //{ 
-        //    weaponHandIK = GameObject.Find("ARIKRig").GetComponent<Rig>();
-        //    fpWeaponHandIK = GameObject.Find("ARFPIKRig").GetComponent<Rig>();
-        //}
+        if (weaponType == WeaponType.AssaultRifle)
+        {
+            //weaponHandIK = GameObject.Find("ARIKRig").GetComponent<Rig>();
+            fpWeaponHandIK = GameObject.Find("HK416RigLayer").GetComponent<Rig>(); //((GunInfo)itemInfo).fpWeaponRig.GetComponent<Rig>(); 
+        }
         //else if (weaponType == WeaponType.Pistol)
         //{
         //    weaponHandIK = GameObject.Find("PistolIKRig").GetComponent<Rig>();
         //    fpWeaponHandIK = GameObject.Find("PistolFPIKRig").GetComponent<Rig>();
         //}
-        //else if (weaponType == WeaponType.BattleRifle)
-        //{
+        else if (weaponType == WeaponType.BattleRifle)
+        {
         //    weaponHandIK = GameObject.Find("BRIKRig").GetComponent<Rig>();
-        //    fpWeaponHandIK = GameObject.Find("BRFPIKRig").GetComponent<Rig>();
-        //}
+            fpWeaponHandIK = GameObject.Find("AR15RigLayer").GetComponent<Rig>();
+        }
 
         bulletsLeft = magazineSize;
 
         //if (hudAmmoCounter == null) For ammo counter
             //hudAmmoCounter = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter/HudAmmoCounter").GetComponent<TextMeshProUGUI>();
 
+        //Gotta rework this so its not hardcoded, everything will just break when Lyd changes things.
         if (ammobarImage == null)
-            ammobarImage = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter/border/Image").GetComponent<Image>();
+            ammobarImage = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter (Primary)/border/Image").GetComponent<Image>();
 
         //weaponAnimator.SetBool("Reloading", false);
         readyToShoot = true;
@@ -99,12 +102,15 @@ public class HitscanWeapon : Gun
 
     public override void Use()
     {
-        //shooting = Input.GetKey(KeyCode.Mouse0);
+        if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
+        else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
         if (readyToShoot && !playerController.isSprinting && shooting && !reloading && bulletsLeft > 0)
         {
             bulletsShot = bulletsPerTap;
             Shoot();
+
+            recoil.Fire();
 
             if (weaponAnimator != null)
                 weaponAnimator.SetBool("Firing", true);
