@@ -9,12 +9,12 @@ public class PlayerAction : MonoBehaviour
     public UIAnimationController uiAnimationController;
 
     [Header("Active Inventory")]
-    [SerializeField] Item[] items;
+    public Item[] items;
     public int weaponIndex;
 
     [Header("Inventory Item Index")]
     public int itemIndex;
-    int previousItemIndex = -1;
+    public int previousItemIndex = -1;
     //public int killFeedHowImage;
 
     [Header("Bools for Abstract Methods")]
