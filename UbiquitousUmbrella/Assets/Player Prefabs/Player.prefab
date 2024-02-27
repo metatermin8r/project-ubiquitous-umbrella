@@ -333,13 +333,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 8772443317728713304}
   playerStats: {fileID: 3430104056916511784}
-  recoil: {fileID: 3262483777936553090}
   uiAnimationController: {fileID: 0}
   items:
   - {fileID: 6191696566809560782}
   - {fileID: 8421172002745858641}
   weaponIndex: 0
   itemIndex: 0
+  previousItemIndex: -1
   isSprinting: 0
   isZoomed: 0
   isReloading: 0
@@ -2098,7 +2098,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9f10b14ee18972141afa9946be5bd57e, type: 2}
+  - {fileID: 2100000, guid: 222451635fd1f1d45b23be408d64fb29, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

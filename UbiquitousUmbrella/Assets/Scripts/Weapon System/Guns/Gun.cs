@@ -54,6 +54,7 @@ public abstract class Gun : Item
     //public TextMeshProUGUI hudAmmoCounter; Main ammo counter component
     //public TextMeshProUGUI gunAmmoCounter;
     //public bool hasAmmoBar = true; Here in case we want both in the future
+    public int weaponChildIndex;
     public Image ammobarImage;
     //public int killFeedHowImageIndex;
     public TrailRenderer bulletTrail;
@@ -69,6 +70,9 @@ public abstract class Gun : Item
     //[Header("Audio")]
     //public AudioSource weaponSoundEmitter;
     //public AudioClip[] gunSounds;
+
+    [HideInInspector]
+    public bool isEquiped = false;
 
     public enum WeaponType { AssaultRifle, Pistol, BattleRifle, Shotgun, SniperRifle }
 }

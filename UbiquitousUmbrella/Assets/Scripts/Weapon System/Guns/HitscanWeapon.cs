@@ -50,9 +50,28 @@ public class HitscanWeapon : Gun
 
         bulletsLeft = magazineSize;
 
-        //Gotta rework this so its not hardcoded, everything will just break when Lyd changes things.
+        //This is better, but still needs sure-fire hard coding.
+        weaponChildIndex = transform.GetSiblingIndex();
+
         if (ammobarImage == null)
-            ammobarImage = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter (Primary)/border/Image").GetComponent<Image>();
+        {
+            switch (weaponChildIndex)
+            {
+                case 0:
+                    ammobarImage = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter (Primary)/border/Image").GetComponent<Image>();
+                    break;
+
+                case 1:
+                    ammobarImage = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter (Secondary)/border/Image").GetComponent<Image>();
+                    break;
+                //Other cases can be added here if we have more weapon slots
+            }
+        }
+        //Old code just in case
+        //if (ammobarImage == null && weaponChildIndex == 0)
+        //    ammobarImage = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter (Primary)/border/Image").GetComponent<Image>();
+        //else if(ammobarImage == null && weaponChildIndex == 1)
+        //    ammobarImage = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter (Secondary)/border/Image").GetComponent<Image>();
 
         //weaponAnimator.SetBool("Reloading", false);
         readyToShoot = true;
@@ -72,6 +91,7 @@ public class HitscanWeapon : Gun
     public void OnEnable()
     {
         //PlaySound(2); Needs an audio manager
+        //weaponChildIndex = transform.GetSiblingIndex();
     }
 
     public void Update()
@@ -115,8 +135,7 @@ public class HitscanWeapon : Gun
                 weaponAnimator.SetBool("Firing", true);
             //playerAnimator.SetBool("WeaponFiring", true);
         }
-        //Shoot();
-        //Debug.Log("Firing gun " + itemInfo.itemName);
+        //Debug.Log("Firing " + itemInfo.itemName);
     }
 
     public override void Reload()
@@ -264,7 +283,11 @@ public class HitscanWeapon : Gun
         {
             return;
         }
-        else
+        else if (!isEquiped)
+        {
+            reloading = false;
+        }
+        else if (isEquiped)
         {
             maxAmmo = maxAmmo - roundsFired;
             roundsFired = 0;
@@ -309,9 +332,6 @@ public class HitscanWeapon : Gun
 
             //TODO: Realistically, this system should have bullets bouncing X% of the time, but only on certain surfaces.
             //This kinda works with layers now, but future Surface Manager implementation will do wonders.
-
-            //To consider: Replace RNG code with an array of random numbers, rather than having Unity generate them on the fly.
-            //Its more performant, probably. I mean hell, if it works for Doom and Quake it works for everything.
 
             //VERY simple RNG code
             float rngValue = Random.Range(0, 100);

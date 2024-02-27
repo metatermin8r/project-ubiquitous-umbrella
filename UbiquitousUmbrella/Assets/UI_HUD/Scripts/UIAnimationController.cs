@@ -12,7 +12,6 @@ public class UIAnimationController : MonoBehaviour
 
     //script references
     public PlayerAction playerAction;
-    public HitscanWeapon hitscanWeapon;
 
     //hud references
     public GameObject assaultRifleHUD;
@@ -25,6 +24,9 @@ public class UIAnimationController : MonoBehaviour
 
     void Awake()
     {
+        if (playerAction == null)
+            playerAction = GameObject.Find("Player").GetComponent<PlayerAction>();
+
         if (playerAction.items[playerAction.itemIndex].GetComponent<HitscanWeapon>().weaponType == Gun.WeaponType.AssaultRifle)
         {
             assaultRifleHUD.SetActive(true);

@@ -151,9 +151,11 @@ public class PlayerAction : MonoBehaviour
         //killFeedHowImage = items[itemIndex].GetComponent<SingleShotGun>().killFeedHowImageIndex;
         //items[itemIndex].GetComponent<SingleShotGun>().weaponHandIK.weight = 1.0f;
         items[itemIndex].GetComponent<HitscanWeapon>().fpWeaponHandIK.weight = 1.0f;
+        items[itemIndex].GetComponent<HitscanWeapon>().isEquiped = true;
 
         if (previousItemIndex != -1)
         {
+            items[previousItemIndex].GetComponent<HitscanWeapon>().isEquiped = false;
             items[previousItemIndex].itemGameObject.SetActive(false);
             //items[previousItemIndex].GetComponent<SingleShotGun>().weaponHandIK.weight = 0.0f;
             items[previousItemIndex].GetComponent<HitscanWeapon>().fpWeaponHandIK.weight = 0.0f;
