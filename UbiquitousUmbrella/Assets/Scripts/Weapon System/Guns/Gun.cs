@@ -51,7 +51,7 @@ public abstract class Gun : Item
     public GameObject bulletImpactPrefab; //Change this from BulletHoleGraphic in old code
     //GameObject bulletHole;
     public ParticleSystem muzzleFlash;
-    //public TextMeshProUGUI hudAmmoCounter; Main ammo counter component
+    public TextMeshProUGUI hudAmmoCounter; //Main ammo counter component
     //public TextMeshProUGUI gunAmmoCounter;
     //public bool hasAmmoBar = true; Here in case we want both in the future
     public int weaponChildIndex;

@@ -73,6 +73,21 @@ public class HitscanWeapon : Gun
         //else if(ammobarImage == null && weaponChildIndex == 1)
         //    ammobarImage = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter (Secondary)/border/Image").GetComponent<Image>();
 
+        if (hudAmmoCounter == null)
+        {
+            switch (weaponChildIndex)
+            {
+                case 0:
+                    hudAmmoCounter = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter (Primary)/border/PrimaryAmmoCount").GetComponent<TextMeshProUGUI>();
+                    break;
+
+                case 1:
+                    hudAmmoCounter = GameObject.Find("Player_Hud/HUD_Canvas/AmmoCounter (Secondary)/border/SecondaryAmmoCount").GetComponent<TextMeshProUGUI>();
+                    break;
+                    //Other cases can be added here if we have more weapon slots
+            }
+        }
+
         //weaponAnimator.SetBool("Reloading", false);
         readyToShoot = true;
         defaultSpread = spread;
@@ -302,7 +317,7 @@ public class HitscanWeapon : Gun
     public void UpdateAmmoHud()
     {
         ammobarImage.fillAmount = (float)bulletsLeft / magazineSize;
-        //hudAmmoCounter.SetText(bulletsLeft + "                            " + maxAmmo);
+        hudAmmoCounter.SetText(maxAmmo + "");
         //hudAmmoCounter.SetText(bulletsLeft / bulletsPerTap + "                            " + maxAmmo / bulletsPerTap);
     }
 

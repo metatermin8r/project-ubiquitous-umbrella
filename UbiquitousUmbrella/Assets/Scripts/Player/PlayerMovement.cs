@@ -120,13 +120,10 @@ public class PlayerMovement : MonoBehaviour
     float wallJumpTimer;
     public float maxWallJumpTimer;
 
-    //Used for pause bool
-    public MenuManager MenuManager;
-    public bool pauseMenuActive;
-    public FirstPersonWeaponMovement weaponSway;
-
     //reference to inventory controller for item pickup ray cast
     [SerializeField] InventoryController inventoryController;
+    MenuManager MenuManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -140,13 +137,13 @@ public class PlayerMovement : MonoBehaviour
             respawnPoint = GameObject.Find("RespawnPoint").transform;
         }
 
-        weaponSway = gameObject.GetComponentInChildren<FirstPersonWeaponMovement>();
+        MenuManager = gameObject.GetComponentInChildren<MenuManager>();
     }
 
     //Call this to increase the player's speed by the desired amount, passed as a float
     void IncreaseSpeed(float speedIncrease)
     {
-        speed += speedIncrease;
+        speed += speedIncrease * Time.deltaTime; //Normalized to deltaTime, makes it seem a bit more realistic
     }
 
     //Same as IncreaseSpeed, but speed go down instead of up
@@ -223,26 +220,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //This is a very hacky solution to the fact that this code used to call weaponSway.EnableAll every frame
-        //That can't happen, so things are handled seperately with roughly the same logic.
-        //Lydia, this really needs to be in PlayerAction or some other catch-all script and not PlayerMovement.
+        //Easy solution to stop inputs while paused.
         //*******************************************
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            //Checks if game is paused
-            if (!MenuManager.gameIsPaused)
-            {
-                //Basic call for general inputs
-                HandleInput();
-                weaponSway.pmEnableAll();
-            }
-            else if (MenuManager.gameIsPaused)
-            {
-                weaponSway.pmDisableAll();
-            }
-        }
-
         if (!MenuManager.gameIsPaused)
         {
             //Basic call for general inputs

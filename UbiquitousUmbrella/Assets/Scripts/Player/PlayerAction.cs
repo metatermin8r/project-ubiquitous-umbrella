@@ -22,9 +22,19 @@ public class PlayerAction : MonoBehaviour
     public bool isZoomed;
     public bool isReloading;
 
+    [Header("Pause Menu")]
+    public MenuManager MenuManager;
+    public bool pauseMenuActive;
+
+    [Header("Weapon Sway")]
+    public FirstPersonWeaponMovement weaponSway;
+
     // Start is called before the first frame update
     void Start()
     {
+        weaponSway = gameObject.GetComponentInChildren<FirstPersonWeaponMovement>();
+        MenuManager = gameObject.GetComponentInChildren<MenuManager>();
+
         //All item prefabs should default to their unequipped states and equipped through code.
         //This call handles that intial equip.
         EquipItem(0);
@@ -36,6 +46,7 @@ public class PlayerAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Handles weapon switching via mouse wheel
         if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
         {
             uiAnimationController.PlaySwapWeaponAnimation();
@@ -59,23 +70,33 @@ public class PlayerAction : MonoBehaviour
                 EquipItem(itemIndex - 1);
         }
 
+        //Handles weapon switching via keyboard numbers, requires one else if and a keybind per weapon slot
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            EquipItem(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            EquipItem(1);
+        }
+
         //***********************************************************************************************
         //*                                                                                             *
         //*This is what handles Mouse 1 input! This is how you make inputs! REMEMBER THIS SHIT AHHHHHHH!*
         //*                                                                                             *
         //***********************************************************************************************
-        if (Input.GetMouseButton(0) && !playerMovement.pauseMenuActive && !isSprinting) //&& !pauseMenuActive)
+        if (Input.GetMouseButton(0) && !MenuManager.gameIsPaused && !isSprinting) //&& !pauseMenuActive)
         {
             items[itemIndex].Use();
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !playerMovement.pauseMenuActive && !isSprinting)
+        if (Input.GetKeyDown(KeyCode.R) && !MenuManager.gameIsPaused && !isSprinting)
         {
             //isReloading = true;
             items[itemIndex].Reload();
         }
 
-        if (Input.GetKey(KeyCode.Mouse1) && !playerMovement.pauseMenuActive)
+        if (Input.GetKey(KeyCode.Mouse1) && !MenuManager.gameIsPaused)
         {
             isZoomed = true;
             items[itemIndex].Zoom();
@@ -85,7 +106,7 @@ public class PlayerAction : MonoBehaviour
             isZoomed = false;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && !playerMovement.pauseMenuActive && playerStats.currentStamina > 0 && !isReloading && !isZoomed)
+        if (Input.GetKey(KeyCode.LeftShift) && !MenuManager.gameIsPaused && playerStats.currentStamina > 0 && !isReloading && !isZoomed)
         {
             items[itemIndex].Sprint();
             isSprinting = true;
@@ -99,22 +120,22 @@ public class PlayerAction : MonoBehaviour
             isSprinting = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && !playerMovement.pauseMenuActive)
+        if (Input.GetKeyDown(KeyCode.F) && !MenuManager.gameIsPaused)
         {
             items[itemIndex].Melee();
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && !playerMovement.pauseMenuActive)
+        if (Input.GetKeyDown(KeyCode.G) && !MenuManager.gameIsPaused)
         {
             items[itemIndex].Grenade();
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && !playerMovement.pauseMenuActive)
+        if (Input.GetKeyDown(KeyCode.Q) && !MenuManager.gameIsPaused)
         {
             //items[itemIndex].Super();
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && !playerMovement.pauseMenuActive)
+        if (Input.GetKeyDown(KeyCode.E) && !MenuManager.gameIsPaused)
         {
             //****************************************
             //*                                      *
@@ -123,20 +144,21 @@ public class PlayerAction : MonoBehaviour
             //****************************************
         }
 
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    if (pauseMenuActive)
-        //    {
-        //        pm.Resume();
-        //        pauseMenuActive = false;
-        //    }
-
-        //    else
-        //    {
-        //        pm.Pause();
-        //        pauseMenuActive = true;
-        //    }
-        //}
+        //This is a very hacky solution to the fact that this code used to call weaponSway.EnableAll every frame
+        //That can't happen, so things are handled seperately with roughly the same logic.
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //Checks if game is paused
+            if (!MenuManager.gameIsPaused)
+            {
+                //Basic call for general inputs
+                weaponSway.pmEnableAll();
+            }
+            else if (MenuManager.gameIsPaused)
+            {
+                weaponSway.pmDisableAll();
+            }
+        }
     }
 
     void EquipItem(int _index)
