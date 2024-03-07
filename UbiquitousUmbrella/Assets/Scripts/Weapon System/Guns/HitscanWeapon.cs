@@ -128,6 +128,11 @@ public class HitscanWeapon : Gun
                 weaponAnimator.SetBool("Sprinting", false);
         }
 
+        if (!playerAction.isSliding)
+        {
+            weaponAnimator.SetBool("Sliding", false);
+        }
+
         if (!playerAction.isZoomed)
         {
             weaponAnimator.SetBool("Aiming", false);
@@ -170,6 +175,13 @@ public class HitscanWeapon : Gun
     {
         if (weaponAnimator != null)
             weaponAnimator.SetBool("Sprinting", true);
+    }
+    public override void Slide()
+    {
+        if (weaponAnimator != null && playerAction.isSliding)
+        {
+            weaponAnimator.SetBool("Sliding", true);
+        }
     }
     public override void Pickup()
     {
@@ -298,8 +310,8 @@ public class HitscanWeapon : Gun
         {
             return;
         }
-        else if (!isEquiped)
-        {
+        else if (!isEquiped || playerAction.isSprinting) //Stops the reload if the weapon isn't equipped,
+        {                                                //or if the player has interrupted the reload by sprinting
             reloading = false;
         }
         else if (isEquiped)

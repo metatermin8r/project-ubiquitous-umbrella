@@ -8902,7 +8902,7 @@ MonoBehaviour:
   itemInfo: {fileID: 11400000, guid: e436bb6644265284d9c71a53922eda0c, type: 2}
   itemGameObject: {fileID: 2332330812563443545}
   weaponType: 2
-  timeBetweenShooting: 0.1
+  timeBetweenShooting: 0.4
   spread: 0.04
   range: 70
   speed: 250
@@ -8931,14 +8931,18 @@ MonoBehaviour:
     m_Bits: 6176
   bulletImpactPrefab: {fileID: 0}
   muzzleFlash: {fileID: 7891742748402156442}
+  hudAmmoCounter: {fileID: 0}
+  weaponChildIndex: 0
   ammobarImage: {fileID: 0}
   bulletTrail: {fileID: 7121900464694666311, guid: 142254301b2dbe4429ed6298d2be01de,
     type: 3}
   weaponAnimator: {fileID: 0}
   fpWeaponHandIK: {fileID: 0}
+  isEquiped: 0
   playerAction: {fileID: 0}
   playerController: {fileID: 0}
   recoil: {fileID: 0}
+  weaponSway: {fileID: 0}
 --- !u!95 &6529486457284638772
 Animator:
   serializedVersion: 5

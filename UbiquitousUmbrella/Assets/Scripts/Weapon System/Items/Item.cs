@@ -11,6 +11,7 @@ public abstract class Item : MonoBehaviour
     public abstract void Reload();
     public abstract void Zoom();
     public abstract void Sprint();
+    public abstract void Slide();
     public abstract void Pickup();
     public abstract void Melee();
     public abstract void Grenade();

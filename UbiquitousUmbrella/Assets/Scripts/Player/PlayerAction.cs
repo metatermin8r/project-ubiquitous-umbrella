@@ -19,6 +19,7 @@ public class PlayerAction : MonoBehaviour
 
     [Header("Bools for Abstract Methods")]
     public bool isSprinting;
+    public bool isSliding;
     public bool isZoomed;
     public bool isReloading;
 
@@ -100,10 +101,12 @@ public class PlayerAction : MonoBehaviour
         {
             isZoomed = true;
             items[itemIndex].Zoom();
+            weaponSway.adsDisable(); //This really should be just reducing sway values, but disabling them works for now
         }
         else
         {
             isZoomed = false;
+            weaponSway.adsEnable(); //This should just reset the sway values back to normal
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && !MenuManager.gameIsPaused && playerStats.currentStamina > 0 && !isReloading && !isZoomed)
@@ -118,6 +121,21 @@ public class PlayerAction : MonoBehaviour
             //playerAnimator.SetBool("Sprinting", false);
 
             isSprinting = false;
+        }
+
+        if (Input.GetKey(KeyCode.LeftControl) && isSprinting)
+        {
+            items[itemIndex].Slide();
+            isSliding = true;
+        }
+        else if (Input.GetKey(KeyCode.LeftControl) && isSliding)
+        {
+            items[itemIndex].Slide();
+            isSliding = true;
+        }
+        else
+        {
+            isSliding = false;
         }
 
         if (Input.GetKeyDown(KeyCode.F) && !MenuManager.gameIsPaused)

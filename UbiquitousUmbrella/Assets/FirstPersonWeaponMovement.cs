@@ -147,7 +147,6 @@ public class FirstPersonWeaponMovement : MonoBehaviour
         bobOffset = false;
         bobSway = false;
     }
-
     public void EnableAll()
     {
         sway = true;
@@ -163,6 +162,20 @@ public class FirstPersonWeaponMovement : MonoBehaviour
         bobOffset = false;
     }
     public void pmEnableAll()
+    {
+        sway = true;
+        swayRotation = true;
+        bobOffset = true;
+    }
+
+    public void adsDisable()
+    {
+        sway = false;
+        swayRotation = false;
+        bobOffset = false;
+    }
+
+    public void adsEnable()
     {
         sway = true;
         swayRotation = true;

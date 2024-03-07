@@ -3463,6 +3463,11 @@ PrefabInstance:
       propertyPath: PlayerHud
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6116098866738951576, guid: f5729864e4b31bb4c9ae7355db7315f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6191696566809560782, guid: f5729864e4b31bb4c9ae7355db7315f7,
         type: 3}
       propertyPath: itemGameObject

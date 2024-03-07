@@ -11,6 +11,7 @@ public abstract class Gun : Item
     public abstract override void Reload();
     public abstract override void Zoom();
     public abstract override void Sprint();
+    public abstract override void Slide();
     public abstract override void Pickup();
     public abstract override void Melee();
     public abstract override void Grenade();
